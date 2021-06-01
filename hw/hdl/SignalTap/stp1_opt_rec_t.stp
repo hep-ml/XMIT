@@ -1,0 +1,654 @@
+<session jtag_chain="USB-Blaster [USB-0]" jtag_device="@1: EP2AGX65 (0x025020DD)" sof_file="readcontrol.sof">
+  <display_tree gui_logging_enabled="0">
+    <display_branch instance="auto_signaltap_0" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
+  </display_tree>
+  <instance entity_name="sld_signaltap" is_auto_node="yes" is_expanded="true" name="auto_signaltap_0" source_file="sld_signaltap.vhd">
+    <node_ip_info instance_id="0" mfg_id="110" node_id="0" version="6"/>
+    <position_info>
+      <single attribute="active tab" value="1"/>
+      <single attribute="data horizontal scroll position" value="0"/>
+      <single attribute="data vertical scroll position" value="29"/>
+      <single attribute="setup horizontal scroll position" value="0"/>
+      <single attribute="setup vertical scroll position" value="17"/>
+      <single attribute="zoom level denominator" value="1"/>
+      <single attribute="zoom level numerator" value="1"/>
+      <single attribute="zoom offset denominator" value="1"/>
+      <single attribute="zoom offset numerator" value="122880"/>
+    </position_info>
+    <signal_set global_temp="1" name="signal_set: 2012/03/15 11:02:15  #0">
+      <clock name="pll16:clocks|c0" polarity="posedge" tap_mode="classic"/>
+      <config ram_type="M4K" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="16384" trigger_in_enable="no" trigger_out_enable="no"/>
+      <top_entity/>
+      <signal_vec>
+        <trigger_input_vec>
+          <wire name="hold" tap_mode="classic" type="output pin"/>
+          <wire name="transmit:transmit_1|busy" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|busy1" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_1|busy2" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_1|opt1_status" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|opt2_status" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|tp1" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|busy" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|busy1" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|busy2" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|busyout" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|cd1" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|cd2" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|data_high[14]" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|data_high[6]" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|data_low[14]" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|data_low[6]" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|opt1_status" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|opt2_status" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|sel_high" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|sel_low" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|tp1" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|txblock" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|txdav" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|validdata_high" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|validdata_low" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|xdav" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_ctrldetect[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_ctrldetect[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_ctrldetect[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_ctrldetect[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_patterndetect[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_patterndetect[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_patterndetect[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_patterndetect[3]" tap_mode="classic" type="combinatorial"/>
+        </trigger_input_vec>
+        <data_input_vec>
+          <wire name="hold" tap_mode="classic" type="output pin"/>
+          <wire name="transmit:transmit_1|busy" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|busy1" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_1|busy2" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_1|opt1_status" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|opt2_status" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|tp1" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|xmitrec:transrec|rx_errdetect[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|xmitrec:transrec|rx_errdetect[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|xmitrec:transrec|rx_errdetect[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|xmitrec:transrec|rx_errdetect[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|xmitrec:transrec|rx_signaldetect[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|xmitrec:transrec|rx_signaldetect[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|xmitrec:transrec|rx_syncstatus[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|xmitrec:transrec|rx_syncstatus[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|xmitrec:transrec|rx_syncstatus[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|xmitrec:transrec|rx_syncstatus[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|busy" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|busy1" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|busy2" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|busyout" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|cd1" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|cd2" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|cd_high[0]" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|cd_high[1]" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|cd_low[0]" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|cd_low[1]" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|data_high[14]" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|data_high[6]" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|data_low[14]" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|data_low[6]" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[10]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[11]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[12]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[13]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[14]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[9]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|opt1_status" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|opt2_status" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|sel_high" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|sel_low" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|tp1" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|txblock" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|txdav" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|validdata_high" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|validdata_low" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|xdav" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_ctrldetect[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_ctrldetect[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_ctrldetect[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_ctrldetect[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[10]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[11]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[12]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[13]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[14]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[15]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[16]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[17]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[18]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[19]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[20]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[21]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[22]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[23]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[24]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[25]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[26]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[27]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[28]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[29]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[30]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[31]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[9]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_errdetect[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_errdetect[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_errdetect[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_errdetect[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_patterndetect[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_patterndetect[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_patterndetect[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_patterndetect[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_signaldetect[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_signaldetect[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_syncstatus[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_syncstatus[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_syncstatus[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_syncstatus[3]" tap_mode="classic" type="combinatorial"/>
+        </data_input_vec>
+        <storage_qualifier_input_vec>
+          <wire name="hold" tap_mode="classic" type="output pin"/>
+          <wire name="transmit:transmit_1|busy" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|busy1" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_1|busy2" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_1|opt1_status" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|opt2_status" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|tp1" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|xmitrec:transrec|rx_errdetect[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|xmitrec:transrec|rx_errdetect[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|xmitrec:transrec|rx_errdetect[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|xmitrec:transrec|rx_errdetect[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|xmitrec:transrec|rx_signaldetect[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|xmitrec:transrec|rx_signaldetect[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|xmitrec:transrec|rx_syncstatus[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|xmitrec:transrec|rx_syncstatus[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|xmitrec:transrec|rx_syncstatus[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_1|xmitrec:transrec|rx_syncstatus[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|busy" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|busy1" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|busy2" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|busyout" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|cd1" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|cd2" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|cd_high[0]" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|cd_high[1]" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|cd_low[0]" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|cd_low[1]" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|data_high[14]" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|data_high[6]" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|data_low[14]" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|data_low[6]" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[10]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[11]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[12]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[13]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[14]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[9]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|opt1_status" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|opt2_status" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|sel_high" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|sel_low" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|tp1" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|txblock" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|txdav" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|validdata_high" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|validdata_low" tap_mode="classic" type="register"/>
+          <wire name="transmit:transmit_2|xdata[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[10]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[11]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[12]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[13]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[14]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[15]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[16]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[17]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[18]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[19]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[20]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[21]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[22]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[23]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[24]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[25]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[26]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[27]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[28]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[29]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[30]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[31]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdata[9]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xdav" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_ctrldetect[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_ctrldetect[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_ctrldetect[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_ctrldetect[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[10]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[11]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[12]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[13]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[14]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[15]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[16]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[17]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[18]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[19]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[20]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[21]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[22]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[23]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[24]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[25]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[26]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[27]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[28]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[29]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[30]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[31]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_dataout[9]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_errdetect[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_errdetect[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_errdetect[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_errdetect[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_patterndetect[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_patterndetect[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_patterndetect[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_patterndetect[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_signaldetect[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_signaldetect[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_syncstatus[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_syncstatus[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_syncstatus[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="transmit:transmit_2|xmitrec:transrec|rx_syncstatus[3]" tap_mode="classic" type="combinatorial"/>
+        </storage_qualifier_input_vec>
+      </signal_vec>
+      <presentation>
+        <data_view>
+          <net is_signal_inverted="no" name="transmit:transmit_1|tp1"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|tp1"/>
+          <bus is_signal_inverted="no" link="all" name="transmit:transmit_2|xmitrec:transrec|rx_ctrldetect" order="msb_to_lsb" radix="hex" state="expand" type="combinatorial">
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_ctrldetect[3]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_ctrldetect[2]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_ctrldetect[1]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_ctrldetect[0]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="transmit:transmit_2|xmitrec:transrec|rx_dataout" order="msb_to_lsb" radix="hex" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[31]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[30]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[29]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[28]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[27]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[26]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[25]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[24]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[23]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[22]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[21]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[20]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[19]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[18]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[17]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[16]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[15]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[14]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[13]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[12]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[11]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[10]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[9]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[8]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[7]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[6]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[5]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[4]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[3]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[2]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[1]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[0]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="transmit:transmit_1|xmitrec:transrec|rx_syncstatus" order="msb_to_lsb" radix="hex" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="transmit:transmit_1|xmitrec:transrec|rx_syncstatus[3]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_1|xmitrec:transrec|rx_syncstatus[2]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_1|xmitrec:transrec|rx_syncstatus[1]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_1|xmitrec:transrec|rx_syncstatus[0]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="transmit:transmit_2|xmitrec:transrec|rx_syncstatus" order="msb_to_lsb" radix="hex" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_syncstatus[3]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_syncstatus[2]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_syncstatus[1]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_syncstatus[0]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="transmit:transmit_2|xmitrec:transrec|rx_signaldetect" order="msb_to_lsb" radix="hex" state="expand" type="combinatorial">
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_signaldetect[1]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_signaldetect[0]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="transmit:transmit_1|xmitrec:transrec|rx_signaldetect" order="msb_to_lsb" radix="hex" state="expand" type="combinatorial">
+            <net is_signal_inverted="no" name="transmit:transmit_1|xmitrec:transrec|rx_signaldetect[1]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_1|xmitrec:transrec|rx_signaldetect[0]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="transmit:transmit_1|xmitrec:transrec|rx_errdetect" order="msb_to_lsb" radix="hex" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="transmit:transmit_1|xmitrec:transrec|rx_errdetect[3]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_1|xmitrec:transrec|rx_errdetect[2]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_1|xmitrec:transrec|rx_errdetect[1]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_1|xmitrec:transrec|rx_errdetect[0]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="transmit:transmit_2|xmitrec:transrec|rx_errdetect" order="msb_to_lsb" radix="hex" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_errdetect[3]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_errdetect[2]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_errdetect[1]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_errdetect[0]"/>
+          </bus>
+          <net is_signal_inverted="no" name="transmit:transmit_2|busy"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|busy1"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|busy2"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|opt1_status"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|opt2_status"/>
+          <net is_signal_inverted="no" name="transmit:transmit_1|opt1_status"/>
+          <net is_signal_inverted="no" name="transmit:transmit_1|opt2_status"/>
+          <net is_signal_inverted="no" name="transmit:transmit_1|busy"/>
+          <net is_signal_inverted="no" name="transmit:transmit_1|busy1"/>
+          <net is_signal_inverted="no" name="transmit:transmit_1|busy2"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|txblock"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|txdav"/>
+          <bus is_signal_inverted="no" link="all" name="transmit:transmit_2|xmitrec:transrec|rx_patterndetect" order="msb_to_lsb" radix="hex" state="expand" type="combinatorial">
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_patterndetect[3]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_patterndetect[2]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_patterndetect[1]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_patterndetect[0]"/>
+          </bus>
+          <net is_signal_inverted="no" name="transmit:transmit_2|data_high[6]"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|data_high[14]"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|data_low[6]"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|data_low[14]"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|sel_low"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|sel_high"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|validdata_low"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|validdata_high"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|cd1"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|cd2"/>
+          <bus is_signal_inverted="no" link="all" name="transmit:transmit_2|cd_high" order="msb_to_lsb" radix="hex" state="collapse" type="register">
+            <net is_signal_inverted="no" name="transmit:transmit_2|cd_high[1]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|cd_high[0]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="transmit:transmit_2|cd_low" order="msb_to_lsb" radix="hex" state="collapse" type="register">
+            <net is_signal_inverted="no" name="transmit:transmit_2|cd_low[1]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|cd_low[0]"/>
+          </bus>
+          <net is_signal_inverted="no" name="transmit:transmit_2|busyout"/>
+          <net is_signal_inverted="no" name="hold"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|xdav"/>
+          <bus is_signal_inverted="no" link="all" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw" order="msb_to_lsb" radix="hex" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[14]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[13]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[12]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[11]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[10]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[9]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[8]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[7]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[6]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[5]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[4]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[3]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[2]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[1]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[0]"/>
+          </bus>
+        </data_view>
+        <setup_view>
+          <net is_signal_inverted="no" name="transmit:transmit_1|tp1"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|tp1"/>
+          <bus is_signal_inverted="no" link="all" name="transmit:transmit_2|xmitrec:transrec|rx_ctrldetect" order="msb_to_lsb" radix="hex" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_ctrldetect[3]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_ctrldetect[2]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_ctrldetect[1]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_ctrldetect[0]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="transmit:transmit_2|xmitrec:transrec|rx_dataout" order="msb_to_lsb" radix="hex" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[31]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[30]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[29]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[28]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[27]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[26]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[25]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[24]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[23]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[22]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[21]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[20]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[19]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[18]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[17]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[16]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[15]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[14]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[13]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[12]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[11]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[10]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[9]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[8]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[7]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[6]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[5]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[4]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[3]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[2]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[1]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_dataout[0]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="transmit:transmit_1|xmitrec:transrec|rx_syncstatus" order="msb_to_lsb" radix="hex" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="transmit:transmit_1|xmitrec:transrec|rx_syncstatus[3]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_1|xmitrec:transrec|rx_syncstatus[2]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_1|xmitrec:transrec|rx_syncstatus[1]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_1|xmitrec:transrec|rx_syncstatus[0]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="transmit:transmit_2|xmitrec:transrec|rx_syncstatus" order="msb_to_lsb" radix="hex" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_syncstatus[3]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_syncstatus[2]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_syncstatus[1]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_syncstatus[0]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="transmit:transmit_2|xmitrec:transrec|rx_signaldetect" order="msb_to_lsb" radix="hex" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_signaldetect[1]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_signaldetect[0]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="transmit:transmit_1|xmitrec:transrec|rx_signaldetect" order="msb_to_lsb" radix="hex" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="transmit:transmit_1|xmitrec:transrec|rx_signaldetect[1]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_1|xmitrec:transrec|rx_signaldetect[0]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="transmit:transmit_1|xmitrec:transrec|rx_errdetect" order="msb_to_lsb" radix="hex" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="transmit:transmit_1|xmitrec:transrec|rx_errdetect[3]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_1|xmitrec:transrec|rx_errdetect[2]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_1|xmitrec:transrec|rx_errdetect[1]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_1|xmitrec:transrec|rx_errdetect[0]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="transmit:transmit_2|xmitrec:transrec|rx_errdetect" order="msb_to_lsb" radix="hex" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_errdetect[3]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_errdetect[2]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_errdetect[1]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_errdetect[0]"/>
+          </bus>
+          <net is_signal_inverted="no" name="transmit:transmit_2|busy"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|busy1"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|busy2"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|opt1_status"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|opt2_status"/>
+          <net is_signal_inverted="no" name="transmit:transmit_1|opt1_status"/>
+          <net is_signal_inverted="no" name="transmit:transmit_1|opt2_status"/>
+          <net is_signal_inverted="no" name="transmit:transmit_1|busy"/>
+          <net is_signal_inverted="no" name="transmit:transmit_1|busy1"/>
+          <net is_signal_inverted="no" name="transmit:transmit_1|busy2"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|txblock"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|txdav"/>
+          <bus is_signal_inverted="no" link="all" name="transmit:transmit_2|xmitrec:transrec|rx_patterndetect" order="msb_to_lsb" radix="hex" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_patterndetect[3]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_patterndetect[2]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_patterndetect[1]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xmitrec:transrec|rx_patterndetect[0]"/>
+          </bus>
+          <net is_signal_inverted="no" name="transmit:transmit_2|data_high[6]"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|data_high[14]"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|data_low[6]"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|data_low[14]"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|sel_low"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|sel_high"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|validdata_low"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|validdata_high"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|cd1"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|cd2"/>
+          <bus is_signal_inverted="no" link="all" name="transmit:transmit_2|cd_high" order="msb_to_lsb" radix="hex" state="collapse" type="register">
+            <net is_signal_inverted="no" name="transmit:transmit_2|cd_high[1]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|cd_high[0]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="transmit:transmit_2|cd_low" order="msb_to_lsb" radix="hex" state="collapse" type="register">
+            <net is_signal_inverted="no" name="transmit:transmit_2|cd_low[1]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|cd_low[0]"/>
+          </bus>
+          <net is_signal_inverted="no" name="transmit:transmit_2|busyout"/>
+          <net is_signal_inverted="no" name="hold"/>
+          <net is_signal_inverted="no" name="transmit:transmit_2|xdav"/>
+          <bus is_signal_inverted="no" link="all" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw" order="msb_to_lsb" radix="hex" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[14]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[13]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[12]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[11]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[10]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[9]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[8]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[7]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[6]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[5]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[4]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[3]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[2]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[1]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|fifo256x34:xmitfifo|wrusedw[0]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="transmit:transmit_2|xdata" order="msb_to_lsb" radix="hex" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[31]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[30]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[29]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[28]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[27]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[26]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[25]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[24]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[23]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[22]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[21]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[20]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[19]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[18]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[17]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[16]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[15]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[14]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[13]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[12]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[11]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[10]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[9]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[8]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[7]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[6]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[5]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[4]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[3]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[2]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[1]"/>
+            <net is_signal_inverted="no" name="transmit:transmit_2|xdata[0]"/>
+          </bus>
+        </setup_view>
+      </presentation>
+      <trigger attribute_mem_mode="false" gap_record="true" global_temp="1" name="trigger: 2012/03/15 11:02:15  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="4096" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_in="dont_care" trigger_out="active high" trigger_type="circular">
+        <power_up_trigger position="pre" storage_qualifier_disabled="no" trigger_in="dont_care" trigger_out="active high"/>
+        <events use_custom_flow_control="no">
+          <level enabled="yes" name="condition1" type="basic">'transmit:transmit_2|busy' == either edge
+            <power_up enabled="yes">
+            </power_up>
+            <op_node/>
+          </level>
+        </events>
+        <storage_qualifier_events>
+          <transitional>000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+            <pwr_up_transitional>000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</pwr_up_transitional>
+          </transitional>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+        </storage_qualifier_events>
+      </trigger>
+    </signal_set>
+  </instance>
+  <mnemonics/>
+  <static_plugin_mnemonics/>
+  <global_info>
+    <single attribute="active instance" value="0"/>
+    <single attribute="config widget visible" value="1"/>
+    <single attribute="data log widget visible" value="1"/>
+    <single attribute="hierarchy widget visible" value="1"/>
+    <single attribute="instance widget visible" value="1"/>
+    <single attribute="jtag widget visible" value="1"/>
+    <multi attribute="column width" size="23" value="34,34,313,74,68,70,88,88,98,98,88,88,110,101,101,101,101,101,101,101,101,107,74"/>
+    <multi attribute="frame size" size="2" value="1902,999"/>
+    <multi attribute="jtag widget size" size="2" value="351,139"/>
+  </global_info>
+</session>
