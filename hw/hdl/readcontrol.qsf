@@ -1,0 +1,192 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2010 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II
+# Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
+# Date created = 10:55:23  September 29, 2010
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		readcontrol_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Arria II GX"
+set_global_assignment -name DEVICE EP2AGX65DF25I3
+set_global_assignment -name TOP_LEVEL_ENTITY readcontrol
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.1 SP2"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "10:55:23  SEPTEMBER 29, 2010"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Standard Edition"
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+set_global_assignment -name OPTIMIZATION_TECHNIQUE SPEED
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP "-40"
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name POWER_HSSI "Opportunistically power off"
+set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS PROGRAMMING PIN"
+set_instance_assignment -name IO_STANDARD LVDS -to linkin
+set_instance_assignment -name IO_STANDARD LVDS -to linkinclk
+set_instance_assignment -name INPUT_TERMINATION DIFFERENTIAL -to linkin
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_location_assignment PIN_AC3 -to linkin[8]
+set_location_assignment PIN_AC4 -to "linkin[8](n)"
+set_location_assignment PIN_AA3 -to linkin[7]
+set_location_assignment PIN_AB3 -to "linkin[7](n)"
+set_location_assignment PIN_W3 -to linkin[6]
+set_location_assignment PIN_Y3 -to "linkin[6](n)"
+set_location_assignment PIN_W1 -to linkin[5]
+set_location_assignment PIN_Y1 -to "linkin[5](n)"
+set_location_assignment PIN_V5 -to linkin[4]
+set_location_assignment PIN_V4 -to "linkin[4](n)"
+set_location_assignment PIN_U4 -to linkin[3]
+set_location_assignment PIN_U3 -to "linkin[3](n)"
+set_location_assignment PIN_T3 -to linkin[2]
+set_location_assignment PIN_T2 -to "linkin[2](n)"
+set_location_assignment PIN_R1 -to linkin[1]
+set_location_assignment PIN_T1 -to "linkin[1](n)"
+set_location_assignment PIN_R4 -to linkin[0]
+set_location_assignment PIN_R3 -to "linkin[0](n)"
+set_location_assignment PIN_P4 -to linkinclk
+set_location_assignment PIN_P3 -to "linkinclk(n)"
+set_location_assignment PIN_U23 -to xtal
+set_instance_assignment -name IO_STANDARD "1.5-V PCML" -to xtal
+set_location_assignment PIN_V21 -to gxb_tx1[1]
+set_location_assignment PIN_Y21 -to gxb_tx1[0]
+set_location_assignment PIN_H21 -to gxb_tx2[1]
+set_location_assignment PIN_K21 -to gxb_tx2[0]
+set_location_assignment PIN_AA23 -to gxb_rx1[0]
+set_location_assignment PIN_W23 -to gxb_rx1[1]
+set_location_assignment PIN_L23 -to gxb_rx2[0]
+set_location_assignment PIN_J23 -to gxb_rx2[1]
+set_location_assignment PIN_A20 -to bytin[9]
+set_location_assignment PIN_A19 -to bytin[8]
+set_location_assignment PIN_A18 -to bytin[7]
+set_location_assignment PIN_A17 -to bytin[6]
+set_location_assignment PIN_A16 -to bytin[5]
+set_location_assignment PIN_A15 -to bytin[4]
+set_location_assignment PIN_A14 -to bytin[3]
+set_location_assignment PIN_A13 -to bytin[2]
+set_location_assignment PIN_A12 -to bytin[1]
+set_location_assignment PIN_A11 -to bytin[0]
+set_location_assignment PIN_AC21 -to bytout[9]
+set_location_assignment PIN_AD21 -to bytout[8]
+set_location_assignment PIN_AD20 -to bytout[7]
+set_location_assignment PIN_AD19 -to bytout[6]
+set_location_assignment PIN_AC19 -to bytout[5]
+set_location_assignment PIN_AD18 -to bytout[4]
+set_location_assignment PIN_AD17 -to bytout[3]
+set_location_assignment PIN_AC15 -to bytout[2]
+set_location_assignment PIN_AB18 -to bytout[1]
+set_location_assignment PIN_AB17 -to bytout[0]
+set_location_assignment PIN_AD13 -to clock16
+set_location_assignment PIN_AD12 -to runin
+set_location_assignment PIN_AC13 -to syncin
+set_location_assignment PIN_AD10 -to token1
+set_location_assignment PIN_AD9 -to token2
+set_location_assignment PIN_AD11 -to trigin
+set_instance_assignment -name IO_STANDARD "1.5-V PCML" -to gxb_rx1
+set_instance_assignment -name IO_STANDARD "1.5-V PCML" -to gxb_rx2
+set_instance_assignment -name IO_STANDARD "1.5-V PCML" -to gxb_tx1
+set_instance_assignment -name IO_STANDARD "1.5-V PCML" -to gxb_tx2
+set_instance_assignment -name IO_STANDARD LVDS -to clock16
+set_instance_assignment -name INPUT_TERMINATION "OCT 100 OHMS" -to gxb_rx1
+set_instance_assignment -name INPUT_TERMINATION "OCT 100 OHMS" -to gxb_rx2
+set_instance_assignment -name INPUT_TERMINATION "OCT 100 OHMS" -to xtal
+set_location_assignment PIN_W16 -to clk128out
+set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
+set_global_assignment -name STRATIXIII_CONFIGURATION_SCHEME "FAST PASSIVE PARALLEL"
+set_global_assignment -name RESERVE_DATA7_THROUGH_DATA1_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_location_assignment PIN_AD6 -to hold
+set_location_assignment PIN_AD8 -to token3
+set_location_assignment PIN_V16 -to indic1
+set_location_assignment PIN_Y16 -to indic2
+set_location_assignment PIN_AA16 -to indic3
+set_location_assignment PIN_AB16 -to indic4
+set_location_assignment PIN_AC9 -to tp1
+set_location_assignment PIN_AB10 -to tp2
+set_location_assignment PIN_AD7 -to accept
+set_global_assignment -name GENERATE_RBF_FILE ON
+set_global_assignment -name ON_CHIP_BITSTREAM_DECOMPRESSION OFF
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name ENABLE_SIGNALTAP ON
+set_global_assignment -name USE_SIGNALTAP_FILE stp1_lastword.stp
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name MISC_FILE readcontrol.dpf
+set_global_assignment -name VHDL_FILE TP/TP_pkg.vhd
+set_global_assignment -name VHDL_FILE TP/TP_module.vhd
+set_global_assignment -name VHDL_FILE TP/TP_generator.vhd
+set_global_assignment -name VHDL_FILE TP/TP_buffer.vhd
+set_global_assignment -name VERILOG_FILE history_fifo.v
+set_global_assignment -name VERILOG_FILE history.v
+set_global_assignment -name VERILOG_FILE rx_align.v
+set_global_assignment -name VERILOG_FILE recon.v
+set_global_assignment -name VERILOG_FILE fifo256x34.v
+set_global_assignment -name VERILOG_FILE gear24to16.v
+set_global_assignment -name VERILOG_FILE gear16to24.v
+set_global_assignment -name VERILOG_FILE hammingcode.v
+set_global_assignment -name VERILOG_FILE fifo256x18.v
+set_global_assignment -name VERILOG_FILE gear16to32.v
+set_global_assignment -name VERILOG_FILE fifi256x55.v
+set_global_assignment -name VERILOG_FILE pll16.v
+set_global_assignment -name VERILOG_FILE datasync.v
+set_global_assignment -name VERILOG_FILE decode24.v
+set_global_assignment -name VERILOG_FILE dp8x36.v
+set_global_assignment -name VERILOG_FILE readcontrol.v
+set_global_assignment -name QIP_FILE xmitrec.qip
+set_global_assignment -name VERILOG_FILE slowcontrol.v
+set_global_assignment -name QIP_FILE fifo512x18.qip
+set_global_assignment -name QIP_FILE pll16.qip
+set_global_assignment -name VERILOG_FILE readback_counters.v
+set_global_assignment -name QIP_FILE linki.qip
+set_global_assignment -name VERILOG_FILE datagenerator1.v
+set_global_assignment -name VERILOG_FILE transmit.v
+set_global_assignment -name VERILOG_FILE readback_status3.v
+set_global_assignment -name QIP_FILE hedfifo256x18.qip
+set_global_assignment -name SIGNALTAP_FILE stp1.stp
+set_global_assignment -name QIP_FILE trans.qip
+set_global_assignment -name QIP_FILE linki_v10.qip
+set_global_assignment -name SIGNALTAP_FILE stp1_token.stp
+set_global_assignment -name SIGNALTAP_FILE stp1_token2.stp
+set_global_assignment -name SIGNALTAP_FILE stp1_data.stp
+set_global_assignment -name SIGNALTAP_FILE stp1_opt_rec_t.stp
+set_global_assignment -name SIGNALTAP_FILE stp1_fake_data.stp
+set_global_assignment -name SIGNALTAP_FILE stp1_opt_tr.stp
+set_global_assignment -name SIGNALTAP_FILE stp1_mixtrig.stp
+set_global_assignment -name SIGNALTAP_FILE stp1_tr2.stp
+set_global_assignment -name SIGNALTAP_FILE stp1_token_study.stp
+set_global_assignment -name SIGNALTAP_FILE stp_busy_fifo.stp
+set_global_assignment -name SIGNALTAP_FILE stp1_lastword.stp
+set_global_assignment -name QIP_FILE fifo16kx36x18.qip
+set_global_assignment -name VERILOG_FILE transmit_neu_split.v
+set_global_assignment -name QIP_FILE fifo16kx18x18.qip
+set_global_assignment -name SLD_FILE db/stp1_lastword_auto_stripped.stp
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

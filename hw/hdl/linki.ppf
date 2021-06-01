@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE pinplan>
+<pinplan intended_family="Arria II GX" variation_name="linki" megafunction_name="ALTLVDS" specifies="all_ports">
+<global>
+<pin name="rx_in[8..0]" direction="input" scope="external"  />
+<pin name="rx_inclock" direction="input" scope="external" source="clock"  />
+<pin name="rx_reset[8..0]" direction="input" scope="external"  />
+<pin name="rx_dpa_locked[8..0]" direction="output" scope="external"  />
+<pin name="rx_locked" direction="output" scope="external"  />
+<pin name="rx_out[35..0]" direction="output" scope="external"  />
+<pin name="rx_outclock" direction="output" scope="external"  />
+
+</global>
+</pinplan>

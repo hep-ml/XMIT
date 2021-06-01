@@ -1,0 +1,95 @@
+PLL_Name	linki_v10:link|altlvds_rx:ALTLVDS_RX_component|linki_v10_lvds_rx:auto_generated|pll
+PLLJITTER	32
+PLLSPEmax	40
+PLLSPEmin	-40
+
+PLL_Name	pll16:clocks|altpll:altpll_component|pll16_altpll:auto_generated|pll1
+PLLJITTER	47
+PLLSPEmax	40
+PLLSPEmin	-40
+
+PLL_Name	transmit:transmit_1|xmitrec:transrec|xmitrec_alt4gxb_tv9a:xmitrec_alt4gxb_tv9a_component|central_clk_div0
+PLLJITTER	NA
+PLLSPEmax	NA
+PLLSPEmin	NA
+
+PLL_Name	transmit:transmit_1|xmitrec:transrec|xmitrec_alt4gxb_tv9a:xmitrec_alt4gxb_tv9a_component|receive_pcs0
+PLLJITTER	NA
+PLLSPEmax	NA
+PLLSPEmin	NA
+
+PLL_Name	transmit:transmit_1|xmitrec:transrec|xmitrec_alt4gxb_tv9a:xmitrec_alt4gxb_tv9a_component|receive_pcs1
+PLLJITTER	NA
+PLLSPEmax	NA
+PLLSPEmin	NA
+
+PLL_Name	transmit:transmit_1|xmitrec:transrec|xmitrec_alt4gxb_tv9a:xmitrec_alt4gxb_tv9a_component|receive_pma0
+PLLJITTER	NA
+PLLSPEmax	NA
+PLLSPEmin	NA
+
+PLL_Name	transmit:transmit_1|xmitrec:transrec|xmitrec_alt4gxb_tv9a:xmitrec_alt4gxb_tv9a_component|receive_pma1
+PLLJITTER	NA
+PLLSPEmax	NA
+PLLSPEmin	NA
+
+PLL_Name	transmit:transmit_1|xmitrec:transrec|xmitrec_alt4gxb_tv9a:xmitrec_alt4gxb_tv9a_component|rx_cdr_pll0
+PLLJITTER	NA
+PLLSPEmax	NA
+PLLSPEmin	NA
+
+PLL_Name	transmit:transmit_1|xmitrec:transrec|xmitrec_alt4gxb_tv9a:xmitrec_alt4gxb_tv9a_component|rx_cdr_pll1
+PLLJITTER	NA
+PLLSPEmax	NA
+PLLSPEmin	NA
+
+PLL_Name	transmit:transmit_1|xmitrec:transrec|xmitrec_alt4gxb_tv9a:xmitrec_alt4gxb_tv9a_component|tx_pll0
+PLLJITTER	NA
+PLLSPEmax	NA
+PLLSPEmin	NA
+
+PLL_Name	transmit:transmit_2|xmitrec:transrec|xmitrec_alt4gxb_tv9a:xmitrec_alt4gxb_tv9a_component|central_clk_div0
+PLLJITTER	NA
+PLLSPEmax	NA
+PLLSPEmin	NA
+
+PLL_Name	transmit:transmit_2|xmitrec:transrec|xmitrec_alt4gxb_tv9a:xmitrec_alt4gxb_tv9a_component|receive_pcs0
+PLLJITTER	NA
+PLLSPEmax	NA
+PLLSPEmin	NA
+
+PLL_Name	transmit:transmit_2|xmitrec:transrec|xmitrec_alt4gxb_tv9a:xmitrec_alt4gxb_tv9a_component|receive_pcs1
+PLLJITTER	NA
+PLLSPEmax	NA
+PLLSPEmin	NA
+
+PLL_Name	transmit:transmit_2|xmitrec:transrec|xmitrec_alt4gxb_tv9a:xmitrec_alt4gxb_tv9a_component|receive_pma0
+PLLJITTER	NA
+PLLSPEmax	NA
+PLLSPEmin	NA
+
+PLL_Name	transmit:transmit_2|xmitrec:transrec|xmitrec_alt4gxb_tv9a:xmitrec_alt4gxb_tv9a_component|receive_pma1
+PLLJITTER	NA
+PLLSPEmax	NA
+PLLSPEmin	NA
+
+PLL_Name	transmit:transmit_2|xmitrec:transrec|xmitrec_alt4gxb_tv9a:xmitrec_alt4gxb_tv9a_component|rx_cdr_pll0
+PLLJITTER	NA
+PLLSPEmax	NA
+PLLSPEmin	NA
+
+PLL_Name	transmit:transmit_2|xmitrec:transrec|xmitrec_alt4gxb_tv9a:xmitrec_alt4gxb_tv9a_component|rx_cdr_pll1
+PLLJITTER	NA
+PLLSPEmax	NA
+PLLSPEmin	NA
+
+PLL_Name	transmit:transmit_2|xmitrec:transrec|xmitrec_alt4gxb_tv9a:xmitrec_alt4gxb_tv9a_component|tx_pll0
+PLLJITTER	NA
+PLLSPEmax	NA
+PLLSPEmin	NA
+
+PLL_Name	xtal~input~INSERTED_REFCLK_DIVIDER
+PLLJITTER	NA
+PLLSPEmax	NA
+PLLSPEmin	NA
+

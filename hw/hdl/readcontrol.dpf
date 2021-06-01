@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pin_planner>
+	<pin_info>
+		<pin name="clock16" direction="Input" source="Hierarchy Database" diff_pair_node="clock16(n)" >
+		</pin>
+		<pin name="gxb_rx1[1..0]" direction="Input Group" source="Hierarchy Database" diff_pair_node="gxb_rx1(n)" >
+		</pin>
+		<pin name="gxb_rx1[1]" direction="Input" source="Hierarchy Database" diff_pair_node="gxb_rx1[1](n)" >
+		</pin>
+		<pin name="gxb_rx1[0]" direction="Input" source="Hierarchy Database" diff_pair_node="gxb_rx1[0](n)" >
+		</pin>
+		<pin name="gxb_rx2[1..0]" direction="Input Group" source="Hierarchy Database" diff_pair_node="gxb_rx2(n)" >
+		</pin>
+		<pin name="gxb_rx2[1]" direction="Input" source="Hierarchy Database" diff_pair_node="gxb_rx2[1](n)" >
+		</pin>
+		<pin name="gxb_rx2[0]" direction="Input" source="Hierarchy Database" diff_pair_node="gxb_rx2[0](n)" >
+		</pin>
+		<pin name="gxb_tx1[1..0]" direction="Output Group" source="Hierarchy Database" diff_pair_node="gxb_tx1(n)" >
+		</pin>
+		<pin name="gxb_tx1[1]" direction="Output" source="Hierarchy Database" diff_pair_node="gxb_tx1[1](n)" >
+		</pin>
+		<pin name="gxb_tx1[0]" direction="Output" source="Hierarchy Database" diff_pair_node="gxb_tx1[0](n)" >
+		</pin>
+		<pin name="gxb_tx2[1..0]" direction="Output Group" source="Hierarchy Database" diff_pair_node="gxb_tx2(n)" >
+		</pin>
+		<pin name="gxb_tx2[1]" direction="Output" source="Hierarchy Database" diff_pair_node="gxb_tx2[1](n)" >
+		</pin>
+		<pin name="gxb_tx2[0]" direction="Output" source="Hierarchy Database" diff_pair_node="gxb_tx2[0](n)" >
+		</pin>
+		<pin name="linkin[8..0]" direction="Input Group" source="Hierarchy Database" diff_pair_node="linkin(n)" >
+		</pin>
+		<pin name="linkin[8]" direction="Input" source="Hierarchy Database" diff_pair_node="linkin[8](n)" >
+		</pin>
+		<pin name="linkin[7]" direction="Input" source="Hierarchy Database" diff_pair_node="linkin[7](n)" >
+		</pin>
+		<pin name="linkin[6]" direction="Input" source="Hierarchy Database" diff_pair_node="linkin[6](n)" >
+		</pin>
+		<pin name="linkin[5]" direction="Input" source="Hierarchy Database" diff_pair_node="linkin[5](n)" >
+		</pin>
+		<pin name="linkin[4]" direction="Input" source="Hierarchy Database" diff_pair_node="linkin[4](n)" >
+		</pin>
+		<pin name="linkin[3]" direction="Input" source="Hierarchy Database" diff_pair_node="linkin[3](n)" >
+		</pin>
+		<pin name="linkin[2]" direction="Input" source="Hierarchy Database" diff_pair_node="linkin[2](n)" >
+		</pin>
+		<pin name="linkin[1]" direction="Input" source="Hierarchy Database" diff_pair_node="linkin[1](n)" >
+		</pin>
+		<pin name="linkin[0]" direction="Input" source="Hierarchy Database" diff_pair_node="linkin[0](n)" >
+		</pin>
+		<pin name="linkinclk" direction="Input" source="Hierarchy Database" diff_pair_node="linkinclk(n)" >
+		</pin>
+		<pin name="xtal" direction="Input" source="Hierarchy Database" diff_pair_node="xtal(n)" >
+		</pin>
+		<pin name="linkin[8](n)" direction="Input" source="Assignments" diff_pair_node="linkin[8]" >
+		</pin>
+		<pin name="linkin[7](n)" direction="Input" source="Assignments" diff_pair_node="linkin[7]" >
+		</pin>
+		<pin name="linkin[6](n)" direction="Input" source="Assignments" diff_pair_node="linkin[6]" >
+		</pin>
+		<pin name="linkin[5](n)" direction="Input" source="Assignments" diff_pair_node="linkin[5]" >
+		</pin>
+		<pin name="linkin[4](n)" direction="Input" source="Assignments" diff_pair_node="linkin[4]" >
+		</pin>
+		<pin name="linkin[3](n)" direction="Input" source="Assignments" diff_pair_node="linkin[3]" >
+		</pin>
+		<pin name="linkin[2](n)" direction="Input" source="Assignments" diff_pair_node="linkin[2]" >
+		</pin>
+		<pin name="linkin[1](n)" direction="Input" source="Assignments" diff_pair_node="linkin[1]" >
+		</pin>
+		<pin name="linkin[0](n)" direction="Input" source="Assignments" diff_pair_node="linkin[0]" >
+		</pin>
+		<pin name="linkinclk(n)" direction="Input" source="Assignments" diff_pair_node="linkinclk" >
+		</pin>
+		<pin name="rx_in[4](n)" direction="Input" source="Report Database" diff_pair_node="rx_in[4]" >
+		</pin>
+		<pin name="rx_in[3](n)" direction="Input" source="Report Database" diff_pair_node="rx_in[3]" >
+		</pin>
+		<pin name="rx_in[7](n)" direction="Input" source="Report Database" diff_pair_node="rx_in[7]" >
+		</pin>
+		<pin name="rx_inclock(n)" direction="Input" source="Report Database" diff_pair_node="rx_inclock" >
+		</pin>
+		<pin name="rx_in[1](n)" direction="Input" source="Report Database" diff_pair_node="rx_in[1]" >
+		</pin>
+		<pin name="rx_in[8](n)" direction="Input" source="Report Database" diff_pair_node="rx_in[8]" >
+		</pin>
+		<pin name="rx_in[2](n)" direction="Input" source="Report Database" diff_pair_node="rx_in[2]" >
+		</pin>
+		<pin name="rx_in[6](n)" direction="Input" source="Report Database" diff_pair_node="rx_in[6]" >
+		</pin>
+		<pin name="rx_in[0](n)" direction="Input" source="Report Database" diff_pair_node="rx_in[0]" >
+		</pin>
+		<pin name="rx_in[5](n)" direction="Input" source="Report Database" diff_pair_node="rx_in[5]" >
+		</pin>
+		<pin name="xtal(n)" direction="Input" source="Report Database" diff_pair_node="xtal" >
+		</pin>
+		<pin name="gxb_rx1[0](n)" direction="Input" source="Report Database" diff_pair_node="gxb_rx1[0]" >
+		</pin>
+		<pin name="clock16(n)" direction="Input" source="Report Database" diff_pair_node="clock16" >
+		</pin>
+		<pin name="gxb_tx2[1](n)" direction="Output" source="Report Database" diff_pair_node="gxb_tx2[1]" >
+		</pin>
+		<pin name="gxb_rx2[1](n)" direction="Input" source="Report Database" diff_pair_node="gxb_rx2[1]" >
+		</pin>
+		<pin name="gxb_tx2[0](n)" direction="Output" source="Report Database" diff_pair_node="gxb_tx2[0]" >
+		</pin>
+		<pin name="gxb_rx2[0](n)" direction="Input" source="Report Database" diff_pair_node="gxb_rx2[0]" >
+		</pin>
+		<pin name="gxb_tx1[1](n)" direction="Output" source="Report Database" diff_pair_node="gxb_tx1[1]" >
+		</pin>
+		<pin name="gxb_rx1[1](n)" direction="Input" source="Report Database" diff_pair_node="gxb_rx1[1]" >
+		</pin>
+		<pin name="gxb_tx1[0](n)" direction="Output" source="Report Database" diff_pair_node="gxb_tx1[0]" >
+		</pin>
+	</pin_info>
+	<buses>
+	</buses>
+	<group_file_association>
+	</group_file_association>
+	<pin_planner_file_specifies>
+	</pin_planner_file_specifies>
+</pin_planner>
