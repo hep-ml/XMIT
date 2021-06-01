@@ -10,8 +10,24 @@ hdrcnt = 0
 amp = 0
 N = 11
 frame=0
+mask=0
+wordMasked=0
+headerlist=[]
+frame1=0
+frame2=0
+femheader=[]
+chnlheader=[]
 
-dakl;hfsdakjhfkjsdalfjs               wlb = bin(int(wlh, scale))[2:].zfill(num_of_bits)
+for l in f:
+        #print(l)                                                                                                              
+        for w in range(0,8):
+                wf = l.split()[w]
+                #print(wf)                                                                                                     
+                wrh = l.split()[w][4:]
+                wlh = l.split()[w][0:4]
+                wrb = bin(int(wrh, scale))[2:].zfill(num_of_bits)                                                            
+
+                wlb = bin(int(wlh, scale))[2:].zfill(num_of_bits)
                 if (wf[0]=="F" or wrh[0]=="1" or wlh[0]=="1"):
                         hdrcnt += 1
                         if (hdrcnt == 5):
