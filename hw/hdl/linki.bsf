@@ -1,0 +1,98 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 320 200)
+	(text "linki" (rect 146 2 179 21)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 181 31 196)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "rx_in[8..0]" (rect 0 0 68 16)(font "Arial" (font_size 8)))
+		(text "rx_in[8..0]" (rect 4 16 62 32)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 104 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "rx_inclock" (rect 0 0 69 16)(font "Arial" (font_size 8)))
+		(text "rx_inclock" (rect 4 32 63 48)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 104 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "rx_reset[8..0]" (rect 0 0 90 16)(font "Arial" (font_size 8)))
+		(text "rx_reset[8..0]" (rect 4 48 81 64)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 104 64)(line_width 3))
+	)
+	(port
+		(pt 320 32)
+		(output)
+		(text "rx_out[35..0]" (rect 0 0 86 16)(font "Arial" (font_size 8)))
+		(text "rx_out[35..0]" (rect 244 16 317 32)(font "Arial" (font_size 8)))
+		(line (pt 320 32)(pt 232 32)(line_width 3))
+	)
+	(port
+		(pt 320 48)
+		(output)
+		(text "rx_outclock" (rect 0 0 79 16)(font "Arial" (font_size 8)))
+		(text "rx_outclock" (rect 250 32 317 48)(font "Arial" (font_size 8)))
+		(line (pt 320 48)(pt 208 48)(line_width 1))
+	)
+	(port
+		(pt 320 64)
+		(output)
+		(text "rx_locked" (rect 0 0 66 16)(font "Arial" (font_size 8)))
+		(text "rx_locked" (rect 261 48 317 64)(font "Arial" (font_size 8)))
+		(line (pt 320 64)(pt 208 64)(line_width 1))
+	)
+	(port
+		(pt 320 80)
+		(output)
+		(text "rx_dpa_locked[8..0]" (rect 0 0 134 16)(font "Arial" (font_size 8)))
+		(text "rx_dpa_locked[8..0]" (rect 203 64 317 80)(font "Arial" (font_size 8)))
+		(line (pt 320 80)(pt 208 80)(line_width 3))
+	)
+	(drawing
+		(text "LVDS Receiver" (rect 115 58 189 72)(font "Arial" ))
+		(text "9 channels, x4" (rect 117 74 188 88)(font "Arial" ))
+		(text "128.00 MHz" (rect 124 90 181 104)(font "Arial" ))
+		(text "I/P data rate=512.00" (rect 101 106 197 120)(font "Arial" ))
+		(text "Outclk Freq = 128.00" (rect 100 122 200 136)(font "Arial" ))
+		(text "Arria II GX" (rect 259 184 308 198)(font "Arial" ))
+		(line (pt 104 24)(pt 208 24)(line_width 1))
+		(line (pt 208 24)(pt 208 168)(line_width 1))
+		(line (pt 208 168)(pt 104 168)(line_width 1))
+		(line (pt 104 168)(pt 104 24)(line_width 1))
+		(line (pt 104 44)(pt 109 49)(line_width 1))
+		(line (pt 104 52)(pt 109 47)(line_width 1))
+		(line (pt 224 27)(pt 232 27)(line_width 1))
+		(line (pt 232 27)(pt 232 39)(line_width 1))
+		(line (pt 232 39)(pt 224 39)(line_width 1))
+		(line (pt 224 39)(pt 224 27)(line_width 1))
+		(line (pt 224 34)(pt 226 36)(line_width 1))
+		(line (pt 226 36)(pt 224 38)(line_width 1))
+		(line (pt 216 36)(pt 224 36)(line_width 1))
+		(line (pt 208 32)(pt 224 32)(line_width 3))
+		(line (pt 216 48)(pt 216 36)(line_width 1))
+	)
+)

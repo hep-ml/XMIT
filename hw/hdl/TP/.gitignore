@@ -1,0 +1,10 @@
+transcript
+input.vhd
+binary_stream*
+readcontrol.done
+hexdump*.txt
+*run*.dat
+.nfs00*
+vsim.wlf
+work/
+*.swp

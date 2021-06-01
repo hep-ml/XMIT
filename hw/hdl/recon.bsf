@@ -1,0 +1,64 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 336 112)
+	(text "recon" (rect 144 1 200 23)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 92 32 108)(font "Arial" ))
+	(port
+		(pt 0 64)
+		(input)
+		(text "reconfig_clk" (rect 0 0 92 17)(font "Arial" (font_size 8)))
+		(text "reconfig_clk" (rect 4 48 80 64)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 152 64)(line_width 1))
+	)
+	(port
+		(pt 0 88)
+		(input)
+		(text "reconfig_fromgxb[16..0]" (rect 0 0 180 17)(font "Arial" (font_size 8)))
+		(text "reconfig_fromgxb[16..0]" (rect 4 72 153 88)(font "Arial" (font_size 8)))
+		(line (pt 0 88)(pt 152 88)(line_width 3))
+	)
+	(port
+		(pt 336 64)
+		(output)
+		(text "reconfig_togxb[3..0]" (rect 0 0 149 17)(font "Arial" (font_size 8)))
+		(text "reconfig_togxb[3..0]" (rect 206 48 331 64)(font "Arial" (font_size 8)))
+		(line (pt 336 64)(pt 200 64)(line_width 3))
+	)
+	(port
+		(pt 336 88)
+		(output)
+		(text "busy" (rect 0 0 36 17)(font "Arial" (font_size 8)))
+		(text "busy" (rect 302 72 332 88)(font "Arial" (font_size 8)))
+		(line (pt 336 88)(pt 200 88)(line_width 1))
+	)
+	(drawing
+		(line (pt 0 0)(pt 337 0)(line_width 1))
+		(line (pt 337 0)(pt 337 113)(line_width 1))
+		(line (pt 0 113)(pt 337 113)(line_width 1))
+		(line (pt 0 0)(pt 0 113)(line_width 1))
+		(line (pt 152 40)(pt 200 40)(line_width 1))
+		(line (pt 200 40)(pt 200 96)(line_width 1))
+		(line (pt 152 96)(pt 200 96)(line_width 1))
+		(line (pt 152 40)(pt 152 96)(line_width 1))
+	)
+)
