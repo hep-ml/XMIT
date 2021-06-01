@@ -1,0 +1,16 @@
+db/
+incremental_db/
+readcontrol.asm.rpt
+readcontrol.done
+readcontrol.fit.rpt
+readcontrol.fit.summary
+readcontrol.flow.rpt
+readcontrol.jdi
+readcontrol.map.rpt
+readcontrol.map.summary
+readcontrol.pin
+readcontrol.qsf
+readcontrol.rbf
+readcontrol.sof
+readcontrol.sta.rpt
+readcontrol.sta.summary
