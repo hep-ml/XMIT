@@ -227,7 +227,9 @@ end if;
 							state	<= SUBHEADER1;
 						else
 							if (tp_buffer(1).frame_start /= tp_ff.frame_start) then
+								--state <= SUBHEADER2;			
 								state <= SUBHEADER1;			
+
 							else
 								state <= IDLE;
 							end if;
@@ -263,7 +265,6 @@ end if;
 		end if;
 		number_filler	<= 0;
 		lst_buffer	<= '0';
-
 
 	when IDLE =>
 		if tp_buffer(0).valid = '1' then
