@@ -135,8 +135,6 @@ elsif (clk196 ='1' and clk196'event) then
 					headercnt <= 1;
 				end if;
 
-				--if data_in = X"e0000000" then
-				--end if;
 				if headerjump = '0' then
 					tx_state <= TX; --not if on first channel after header
 				end if;
@@ -162,9 +160,9 @@ elsif (clk196 ='1' and clk196'event) then
 						rx_state <= IDLE;
 						rx_substate <= Idle;
 						rxcnt <= 0;
-					TP_Raw_Frame.eof <= '1';
-				else
-					TP_Raw_Frame.eof <= '0';
+						TP_Raw_Frame.eof <= '1';
+					else
+						TP_Raw_Frame.eof <= '0';
 					end if;
 				elsif value(0)(15 downto 12) = "0001" then
 					---- Shift to buffer
