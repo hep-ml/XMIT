@@ -67,7 +67,7 @@ elsif (clk196 ='1' and clk196'event) then
 
 	case rx_state is
 	when IDLE =>
-		if unsigned(data_in) = X"ffffffff" then
+		if unsigned(data_in) = X"FFFFFFFF" then
 			rx_state	<= OP;
 			rx_substate	<= Header;
 			rxcnt		<= 0;
@@ -125,10 +125,12 @@ elsif (clk196 ='1' and clk196'event) then
 			end loop;
 
 			if value(1)(15 downto 12) = "0001" or value(0)(15 downto 12) = "0001" 
-					or data_in = X"e0000000" or value(0) = X"ffff" or value(1) = X"ffff" then
+					-- or data_in = X"E0000000" or value(0) = X"FFFF" or value(1) = X"FFFF" then
+					or value(0) = X"E000" or value(1) = X"E000"  or value(0) = X"FFFF" or value(1) = X"FFFF" then
 				write(line_out,888888,right,15);
 				writeline(outfile,line_out);
-				if (value(0) = X"ffff" or value(1) = X"ffff") and data_in /= X"e0000000"  then -- end of FEM
+				-- if (value(0) = X"FFFF" or value(1) = X"FFFF") and data_in /= X"E0000000"  then -- end of FEM
+				if (value(0) = X"FFFF" or value(1) = X"FFFF") and not(value(0) = X"E000" or value(1) = X"E000")  then -- end of FEM
 					rx_substate <= Header;
 					TP_Raw_Frame_Buffer.fem_header1(15 downto 0) <= value(0);
 					TP_Raw_Frame_Buffer.fem_header1(31 downto 16) <= value(1);
@@ -150,13 +152,15 @@ elsif (clk196 ='1' and clk196'event) then
 				TP_Raw_Frame.fem_header3	<= TP_Raw_Frame_Buffer.fem_header3;
 				TP_Raw_Frame.fem_header4	<= TP_Raw_Frame_Buffer.fem_header4;
 
-				if value(1)(15 downto 12) = "0001" or data_in = X"e0000000" then
+				--if value(1)(15 downto 12) = "0001" or data_in = X"E0000000" then
+				if value(1)(15 downto 12) = "0001" or value(0) = X"E000" or value(1) = X"E000" then
 					---- Shift to buffer
 					TP_Raw_Frame.amplitude 		<= TP_Raw_Frame_Buffer.amplitude;
 					TP_Raw_Frame.nb_values		<= TP_Raw_Frame_Buffer.nb_values;
 					TP_Raw_Frame.integralN		<= TP_Raw_Frame_Buffer.integralN;
 					TP_Raw_Frame.integralFull	<= TP_Raw_Frame_Buffer.integralFull;
-					if data_in = X"e0000000" then
+					--if data_in = X"E0000000" then
+					if value(0) = X"E000" or value(1) = X"E000" then
 						rx_state <= IDLE;
 						rx_substate <= Idle;
 						rxcnt <= 0;
