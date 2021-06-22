@@ -240,7 +240,6 @@ end if;
 				end if;
 			else
 				state <= EOF1;
-				lst_buffer  <= '1';
 				eof <= '1';
 			end if;
 			for i in 0 to BUFFER_LENGTH-2 loop 
@@ -264,7 +263,7 @@ end if;
 			state		<= IDLE;
 		end if;
 		number_filler	<= 0;
-		lst_buffer	<= '0';
+		lst_buffer  <= '1';
 
 	when IDLE =>
 		if tp_buffer(0).valid = '1' then
