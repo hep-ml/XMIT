@@ -227,8 +227,8 @@ end if;
 							state	<= SUBHEADER1;
 						else
 							if (tp_buffer(1).frame_start /= tp_ff.frame_start) then
-								state <= SUBHEADER2;			
-								--state <= SUBHEADER1;			
+								--state <= SUBHEADER2;			
+								state <= SUBHEADER1;			
 
 							else
 								state <= IDLE;
