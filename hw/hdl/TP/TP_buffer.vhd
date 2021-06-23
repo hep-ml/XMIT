@@ -274,17 +274,17 @@ end if;
 				eof <= '0';
 				state <= INIT1;
 			else
-				if (tp_ff_old.fem_header1 /= tp_ff.fem_header1 or
-				tp_ff_old.fem_header2 /= tp_ff.fem_header2 or
-				tp_ff_old.fem_header3 /= tp_ff.fem_header3 or
-				tp_ff_old.fem_header4 /= tp_ff.fem_header4) then
+				if (tp_ff_old.fem_header1 /= tp_buffer(0).fem_header1 or
+				tp_ff_old.fem_header2 /= tp_buffer(0).fem_header2 or
+				tp_ff_old.fem_header3 /= tp_buffer(0).fem_header3 or
+				tp_ff_old.fem_header4 /= tp_buffer(0).fem_header4) then
 					state		<= FEMHEADER_VAL1A;
 					number_filler	<= 0;
 				else
-					if tp_ff_old.channel_header /= tp_ff.channel_header  then
+					if tp_ff_old.channel_header /= tp_buffer(0).channel_header  then
 						state	<= SUBHEADER1;
 					else
-						if (tp_ff_old.frame_start /= tp_ff.frame_start) then
+						if (tp_ff_old.frame_start /= tp_buffer(0).frame_start) then
 							--state <= SUBHEADER2;			
 							state <= SUBHEADER1;			
 
