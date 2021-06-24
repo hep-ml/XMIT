@@ -174,6 +174,7 @@ end if;
 	
 	when INIT1 =>
 		state <= INIT2;
+		fst <= '1';
 
 	when INIT2 =>
 		state <= FEMHEADER_VAL1A;
@@ -258,19 +259,17 @@ end if;
 	when EOF2 =>
 		if tp_ff.valid = '1' then
 			state		<= INIT1;
-			fst <= '1';
 			tp_ff	<= tp_buffer(0);
 			eof <= '0';
 		else
 			state		<= IDLE;
+			lst_buffer  <= '1';
 		end if;
 		number_filler	<= 0;
-		lst_buffer  <= '1';
 
 	when IDLE =>
 		if tp_buffer(0).valid = '1' then
 			if eof = '1' then
-				fst <= '1';
 				eof <= '0';
 				state <= INIT1;
 			else
