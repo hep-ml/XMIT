@@ -4,7 +4,7 @@ use ieee.numeric_std.all;
 --debugging
 library std;
 use std.textio.all;
-use ieee.std_logic_textio.all; --require for writing std_logic etc.
+use ieee.std_logic_textio.all; 
 
 use work.TP_pkg.all;
 
@@ -40,27 +40,11 @@ signal state 			: state_t;
 signal tp_map			: std_logic_vector_array;
 signal lst_buffer		: std_logic;
 signal eof			: std_logic;
---signal state_d			: state_t;
 begin
 
 lst		<= lst_buffer;
 
---tp_map(1)	<= X"C" & std_logic_vector(	tp_ff.nb_values			);
---tp_map(0)	<= X"C" & std_logic_vector(	tp_ff.integralFull(11 downto 0)	);
---tp_map(3)	<= X"C" & std_logic_vector(	tp_ff.integralFull(23 downto 12)	);
---tp_map(2)	<= X"C" & std_logic_vector(	tp_ff.integralN(11 downto 0)	);
---tp_map(5)	<= X"C" & std_logic_vector(	tp_ff.integralN(23 downto 12)	);
---tp_map(4)	<= X"C" & std_logic_vector(	tp_ff.amplitude	);
-
-
-
---fst		<=	'1'							when state = INIT1		else
---			'0';
-
---lst		<=	'1'							when state = EOF1		else
---			'0';
-
-sequential : process (clk196, rst) -- sensitivity list
+sequential : process (clk196, rst) 
 variable line_out 	: line;
 begin
 
@@ -73,77 +57,77 @@ if rst = '1' then
 	fst <= '0';
 	lst_buffer <= '0';
 	eof <= '1';
+
 elsif (clk196 ='1' and clk196'event) then
-if  state = INIT1 or state = INIT2 then
-	data_out <= (others => '1');
-	valid		<=	'1';
-elsif state = FEMHEADER_VAL1B then
-	data_out <= tp_ff.fem_header1(WORD-1 downto 0);
-	valid		<=	'1';
-elsif state = FEMHEADER_VAL1A then
-	data_out <= tp_ff.fem_header1(2*WORD-1 downto WORD);
-	valid		<=	'1';
-elsif state = FEMHEADER_VAL2B then
-	data_out <= tp_ff.fem_header2(WORD-1 downto 0);
-	valid		<=	'1';
-elsif state = FEMHEADER_VAL2A then
-	data_out <= tp_ff.fem_header2(2*WORD-1 downto WORD);
-	valid		<=	'1';
-elsif state = FEMHEADER_VAL3B then
-	data_out <= tp_ff.fem_header3(WORD-1 downto 0);
-	valid		<=	'1';
-elsif state = FEMHEADER_VAL3A then
-	data_out <= tp_ff.fem_header3(2*WORD-1 downto WORD);
-	valid		<=	'1';
-elsif state = FEMHEADER_VAL4B then
-	data_out <= tp_ff.fem_header4(WORD-1 downto 0);
-	valid		<=	'1';
-elsif state = FEMHEADER_VAL4A then
-	data_out <= tp_ff.fem_header4(2*WORD-1 downto WORD);
-	valid		<=	'1';
-elsif state = FEMHEADER_FILLER then
-	data_out <= X"F000";
-	valid		<=	'1';
-elsif state = SUBHEADER2 then
-	data_out <= tp_ff.channel_header;
-	valid		<=	'1';
-elsif state = SUBHEADER1 then
-	data_out <= tp_ff.frame_start;
-	valid		<=	'1';
-elsif state = PAYLOAD then
-	if payload_pointer = 1 then
-		data_out <= X"C" & std_logic_vector(	tp_ff.nb_values			);
-	elsif payload_pointer = 0 then
-		data_out <= X"C" & std_logic_vector(	tp_ff.integralFull(11 downto 0)	); 
-	elsif payload_pointer = 3 then
-		data_out <= X"C" & std_logic_vector(	tp_ff.integralFull(23 downto 12)	);
-	elsif payload_pointer = 2 then
-		data_out <=  X"C" & std_logic_vector(	tp_ff.integralN(11 downto 0)	);
-	elsif payload_pointer = 5 then
-		data_out <= X"C" & std_logic_vector(	tp_ff.integralN(23 downto 12)	); 
-	elsif payload_pointer = 4 then
-		data_out<= X"C" & std_logic_vector(	tp_ff.amplitude	);
-	end if;
-	valid		<=	'1';
-elsif state = EOF2 then
-	data_out <= X"E000";
-	valid		<=	'1';
-elsif state = EOF1 then
-	data_out <= X"0000";
-	valid		<=	'1';
-elsif state = IDLE then
-	data_out <= X"0000";
-	if lst_buffer = '1' then
+
+	if  state = INIT1 or state = INIT2 then
+		data_out <= (others => '1');
 		valid		<=	'1';
-	else
-		valid		<=	'0';
+	elsif state = FEMHEADER_VAL1B then
+		data_out <= tp_ff.fem_header1(WORD-1 downto 0);
+		valid		<=	'1';
+	elsif state = FEMHEADER_VAL1A then
+		data_out <= tp_ff.fem_header1(2*WORD-1 downto WORD);
+		valid		<=	'1';
+	elsif state = FEMHEADER_VAL2B then
+		data_out <= tp_ff.fem_header2(WORD-1 downto 0);
+		valid		<=	'1';
+	elsif state = FEMHEADER_VAL2A then
+		data_out <= tp_ff.fem_header2(2*WORD-1 downto WORD);
+		valid		<=	'1';
+	elsif state = FEMHEADER_VAL3B then
+		data_out <= tp_ff.fem_header3(WORD-1 downto 0);
+		valid		<=	'1';
+	elsif state = FEMHEADER_VAL3A then
+		data_out <= tp_ff.fem_header3(2*WORD-1 downto WORD);
+		valid		<=	'1';
+	elsif state = FEMHEADER_VAL4B then
+		data_out <= tp_ff.fem_header4(WORD-1 downto 0);
+		valid		<=	'1';
+	elsif state = FEMHEADER_VAL4A then
+		data_out <= tp_ff.fem_header4(2*WORD-1 downto WORD);
+		valid		<=	'1';
+	elsif state = FEMHEADER_FILLER then
+		data_out <= X"F000";
+		valid		<=	'1';
+	elsif state = SUBHEADER2 then
+		data_out <= tp_ff.channel_header;
+		valid		<=	'1';
+	elsif state = SUBHEADER1 then
+		data_out <= tp_ff.frame_start;
+		valid		<=	'1';
+	elsif state = PAYLOAD then
+		if payload_pointer = 1 then
+			data_out <= X"C" & std_logic_vector(	tp_ff.nb_values			);
+		elsif payload_pointer = 0 then
+			data_out <= X"C" & std_logic_vector(	tp_ff.integralFull(11 downto 0)	); 
+		elsif payload_pointer = 3 then
+			data_out <= X"C" & std_logic_vector(	tp_ff.integralFull(23 downto 12)	);
+		elsif payload_pointer = 2 then
+			data_out <=  X"C" & std_logic_vector(	tp_ff.integralN(11 downto 0)	);
+		elsif payload_pointer = 5 then
+			data_out <= X"C" & std_logic_vector(	tp_ff.integralN(23 downto 12)	); 
+		elsif payload_pointer = 4 then
+			data_out<= X"C" & std_logic_vector(	tp_ff.amplitude	);
+		end if;
+		valid		<=	'1';
+	elsif state = EOF2 then
+		data_out <= X"E000";
+		valid		<=	'1';
+	elsif state = EOF1 then
+		data_out <= X"0000";
+		valid		<=	'1';
+	elsif state = IDLE then
+		data_out <= X"0000";
+		if lst_buffer = '1' then
+			valid		<=	'1';
+		else
+			valid		<=	'0';
+		end if;
 	end if;
-end if;
 
---valid		<=	'1'							when (state /= IDLE) or (lst_buffer = '1') 	else
---			'0';
+------------------------------------------------------------------------------------
 
-	--state_d <= state;
 	if TP_Raw.valid = '1' then
 		if (state = PAYLOAD and payload_pointer >= PAYLOAD_LENGTH - 1) then
 			if buffer_length_pointer - 1 >= 0 then
@@ -170,6 +154,8 @@ end if;
 		end if;
 	end if;
 
+------------------------------------------------------------------------------------
+
 	case state is 
 	
 	when INIT1 =>
@@ -182,18 +168,25 @@ end if;
 
 	when FEMHEADER_VAL1A =>
 		state <= FEMHEADER_VAL1B;
+
 	when FEMHEADER_VAL1B =>
 		state <= FEMHEADER_VAL2A;
+
 	when FEMHEADER_VAL2A =>
 		state <= FEMHEADER_VAL2B;
+
 	when FEMHEADER_VAL2B =>
 		state <= FEMHEADER_VAL3A;
+
 	when FEMHEADER_VAL3A =>
 		state <= FEMHEADER_VAL3B;
+
 	when FEMHEADER_VAL3B =>
 		state <= FEMHEADER_VAL4A;
+
 	when FEMHEADER_VAL4A =>
 		state <= FEMHEADER_VAL4B;
+
 	when FEMHEADER_VAL4B =>
 			state		<= FEMHEADER_FILLER;
 			number_filler	<= 0;
@@ -229,7 +222,6 @@ end if;
 							state	<= SUBHEADER1;
 						else
 							if (tp_buffer(1).frame_start /= tp_ff.frame_start) then
-								--state <= SUBHEADER2;			
 								state <= SUBHEADER1;			
 
 							else
@@ -284,7 +276,6 @@ end if;
 						state	<= SUBHEADER1;
 					else
 						if (tp_ff_old.frame_start /= tp_buffer(0).frame_start) then
-							--state <= SUBHEADER2;			
 							state <= SUBHEADER1;			
 
 						else
@@ -298,7 +289,7 @@ end if;
 			fst   <= '0';
 		end if;
 		lst_buffer	<= '0';
-		--debug
+		--! debug
 		write(line_out,888888,right,15); 
 		writeline(outfile,line_out);
 
