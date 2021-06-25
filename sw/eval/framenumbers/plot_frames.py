@@ -1,26 +1,26 @@
 import matplotlib.pyplot as plt
 
 
-with open('SN_frames.txt') as f:
+with open('SN_frames_new.txt') as f:
     lines = f.readlines()
     x = [int(line.strip('n'),16) for line in lines]
 plt.plot(x,'.')
-plt.title("Frame numbers SN")
+plt.title("Frame numbers SN, nominal firmware")
 plt.ylabel("FEM Header Frame Number")
 plt.xlabel("Iterative Frame Counter")
 plt.show()
 
-with open('TP_frames.txt') as f:
+a='''with open('TP_frames_new.txt') as f:
     lines = f.readlines()
     x = [int(line.strip('n'),16) for line in lines]
 plt.plot(x,'.')
 plt.title("Frame numbers TP")
 plt.ylabel("FEM Header Frame Number")
 plt.xlabel("Iterative Frame Counter")
-plt.show()
+plt.show()'''
 
 
-with open('log.txt') as f:
+with open('log_new.txt') as f:
     lines = f.readlines()
     x = [int(line.strip('n'),16) for line in lines]
 plt.plot(x,'.')

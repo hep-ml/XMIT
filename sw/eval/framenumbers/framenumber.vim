@@ -1,4 +1,5 @@
 %s/^.*\(FFFFFFFF F...FFFF F...F... F...\).*$/\1/
 g/........ ........ ........ ......../d
 %s/FFFFFFFF F...FFFF ........ F//g
-saveas SN_frames.txt
+saveas SN_frames_new.txt
+x
