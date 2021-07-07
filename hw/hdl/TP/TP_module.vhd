@@ -77,7 +77,7 @@ begin
 
     TP_buffer_inst : component TP_buffer
     generic map (
-	BUFFER_LENGTH	=> 4,
+	BUFFER_LENGTH	=> 16,
 	PAYLOAD_LENGTH	=> 6
     )
     port map (

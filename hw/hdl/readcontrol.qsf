@@ -41,7 +41,7 @@ set_global_assignment -name DEVICE EP2AGX65DF25I3
 set_global_assignment -name TOP_LEVEL_ENTITY readcontrol
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.1 SP2"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "10:55:23  SEPTEMBER 29, 2010"
-set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Standard Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "19.1.0 Standard Edition"
 set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
 set_global_assignment -name OPTIMIZATION_TECHNIQUE SPEED
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP "-40"
@@ -187,5 +187,5 @@ set_global_assignment -name SIGNALTAP_FILE stp1_lastword.stp
 set_global_assignment -name QIP_FILE fifo16kx36x18.qip
 set_global_assignment -name VERILOG_FILE transmit_neu_split.v
 set_global_assignment -name QIP_FILE fifo16kx18x18.qip
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name SLD_FILE db/stp1_lastword_auto_stripped.stp
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
