@@ -28,7 +28,7 @@ end TP_buffer;
 
 architecture behavioral of TP_buffer is
 file outfile : text open write_mode is "DEBUG_BUFFER_OUTPUT.txt";
-type state_t is (INIT1,INIT2,FEMHEADER_VAL1A,FEMHEADER_VAL1B,FEMHEADER_VAL2A,FEMHEADER_VAL2B,FEMHEADER_VAL3A,FEMHEADER_VAL3B,FEMHEADER_VAL4A,FEMHEADER_VAL4B,FEMHEADER_FILLER,SUBHEADER2,SUBHEADER1,PAYLOAD,EOF1,EOF2,IDLE);
+type state_t is (INIT1,INIT2,FEMHEADER_VAL1A,FEMHEADER_VAL1B,FEMHEADER_VAL2A,FEMHEADER_VAL2B,FEMHEADER_VAL3A,FEMHEADER_VAL3B,FEMHEADER_VAL4A,FEMHEADER_VAL4B,FEMHEADER_FILLER,SUBHEADER2,SUBHEADER1,PAYLOAD,ENDOFFRAME1,ENDOFFRAME2,IDLE,ENDOFFEM1,ENDOFFEM2);
 type std_logic_vector_array is array(PAYLOAD_LENGTH-1 downto 0) of std_logic_vector(WORD-1 downto 0);
 signal tp_buffer 		: tp_buffer_array(BUFFER_LENGTH-1 downto 0);
 signal tp_ff 			: generator_to_buffer_t;
@@ -111,10 +111,16 @@ elsif (clk196 ='1' and clk196'event) then
 			data_out<= X"C" & std_logic_vector(	tp_ff.amplitude	);
 		end if;
 		valid		<=	'1';
-	elsif state = EOF2 then
+	elsif state = ENDOFFRAME2 then
 		data_out <= X"E000";
 		valid		<=	'1';
-	elsif state = EOF1 then
+	elsif state = ENDOFFRAME1 then
+		data_out <= X"0000";
+		valid		<=	'1';
+	elsif state = ENDOFFEM2 then
+		data_out <= X"0000";
+		valid		<=	'1';
+	elsif state = ENDOFFEM1 then
 		data_out <= X"0000";
 		valid		<=	'1';
 	elsif state = IDLE then
@@ -215,7 +221,7 @@ elsif (clk196 ='1' and clk196'event) then
 					tp_buffer(1).fem_header2 /= tp_ff.fem_header2 or
 					tp_buffer(1).fem_header3 /= tp_ff.fem_header3 or
 					tp_buffer(1).fem_header4 /= tp_ff.fem_header4) then
-						state		<= FEMHEADER_VAL1A;
+						state		<= ENDOFFEM1;
 						number_filler	<= 0;
 					else
 						if tp_buffer(1).channel_header /= tp_ff.channel_header  then
@@ -233,7 +239,7 @@ elsif (clk196 ='1' and clk196'event) then
 					state <= IDLE;
 				end if;
 			else
-				state <= EOF1;
+				state <= ENDOFFRAME1;
 				eof <= '1';
 			end if;
 			for i in 0 to BUFFER_LENGTH-2 loop 
@@ -245,10 +251,10 @@ elsif (clk196 ='1' and clk196'event) then
 			payload_pointer <= payload_pointer + 1;
 		end if;	
 
-	when EOF1 =>
-		state <= EOF2;
+	when ENDOFFRAME1 =>
+		state <= ENDOFFRAME2;
 
-	when EOF2 =>
+	when ENDOFFRAME2 =>
 		if tp_ff.valid = '1' then
 			state		<= INIT1;
 			tp_ff	<= tp_buffer(0);
@@ -258,6 +264,12 @@ elsif (clk196 ='1' and clk196'event) then
 			lst_buffer  <= '1';
 		end if;
 		number_filler	<= 0;
+
+	when ENDOFFEM1 =>
+		state <= ENDOFFEM2;
+
+	when ENDOFFEM2 =>
+		state <= FEMHEADER_VAL1A ;
 
 	when IDLE =>
 		if tp_buffer(0).valid = '1' then
