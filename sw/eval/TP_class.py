@@ -48,6 +48,21 @@ def test():
 
 	# Not let's sort the list with using "channel" as key
 	TPs_sorted = sorted(TPs,key=operator.attrgetter("channel"))
+	
+	# Now let's create a list, with groups of fems, with groups of TPs
+	mainlist = []
+	for channelno in range(0,64):
+		mainlist.append([])
+	for channelno in range(0,64):
+		for femno in range(4,19):
+			mainlist[channelno].append([])
+	
+	# Loop over all TPs and put them in the right bin
+	for tp in TPs:
+		mainlist[tp.channel][tp.fem].append(tp)
+
+
+
 
 	# Let's verify
 	print(TPs_sorted)
