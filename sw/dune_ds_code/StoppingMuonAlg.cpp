@@ -11,9 +11,7 @@
 #include <cstddef>
 #include <stdint.h>
 #include <algorithm>
-//#include <TRoot.h>
-//#include <TTree.h>
-//#include <TFile.h>
+
 using namespace std;
 
 struct TriggerPrimitive {
@@ -79,7 +77,7 @@ int main(){
 
 
   //ifstream myfile("tps.txt");                                                                                                  
-  ifstream myfile("test10.txt");
+  ifstream myfile("listfilefilter.txt");
   if (!myfile.is_open()) {
     std::cout << "Error opening file";
   }
@@ -261,76 +259,47 @@ for(int chnlind=ColPlStartChnl; chnlind<(ColPlEndChnl+boxwidch); chnlind+=boxwid
     //tp_list_this: saves the TPs for the current channel in loop
     tp_list_this.push_back({tp_list_maxadc[imaxadc].channel, tp_list_maxadc[imaxadc].time_start, tp_list_maxadc[imaxadc].adc_integral, tp_list_maxadc[imaxadc].adc_peak, tp_list_maxadc[imaxadc].time_over_threshold});
 
-    //tp_list_prev: saves the TPs for the previous channel w.r.t current channel in loop
-    //tp_list_prev.push_back({tp_list_maxadc[imaxadc].channel, tp_list_maxadc[imaxadc].time_start, tp_list_maxadc[imaxadc].adc_integral, tp_list_maxadc[imaxadc].adc_peak, tp_list_maxadc[imaxadc].time_over_threshold});
-
-    //tp_list_next: saves the TPs for the next channel w.r.t current channel in loop 
-    //tp_list_next.push_back({tp_list_maxadc[imaxadc].channel, tp_list_maxadc[imaxadc].time_start, tp_list_maxadc[imaxadc].adc_integral, tp_list_maxadc[imaxadc].adc_peak, tp_list_maxadc[imaxadc].time_over_threshold});
-
-    //tp_list_sf: save the TPs while calculating forward slope (should update the values)
-    //tp_list_sf.push_back({tp_list_maxadc[imaxadc].channel, tp_list_maxadc[imaxadc].time_start, tp_list_maxadc[imaxadc].adc_integral, tp_list_maxadc[imaxadc].adc_peak, tp_list_maxadc[imaxadc].time_over_threshold});
-
-    //tp_list_sb: save the TPs while calculating backward slope (should update the values)   
-    //tp_list_sb.push_back({tp_list_maxadc[imaxadc].channel, tp_list_maxadc[imaxadc].time_start,tp_list_maxadc[imaxadc].adc_integral, tp_list_maxadc[imaxadc].adc_peak, tp_list_maxadc[imaxadc].time_over_threshold});
     tp_list_prev = tp_list_this;
     tp_list_next = tp_list_this;
     tp_list_sf = tp_list_this;
     tp_list_sb = tp_list_this;  
 
-  frontfound = false;
+    frontfound = false;
     hitfound = false;
 
 
-
-    //  std::cout << " This time: " << this_time_min << "Previous Time: " << tp_list_prev[imaxadc].time_start << std::endl;
-
-    // int maxadcindex =  getIndex(initialvec_adc, tp_list_maxadc[imaxadc].adc_integral);
-    //    for (int thisindex=0; thisindex<tp_list_this.size(); thisindex++){
-      // std::cout << "This TPList contents, Channel" << tp_list_this[thisindex].channel << ", tstart" << tp_list_this[thisindex].time_start << "TPs(ToT,ADCIntg, ADC)"<< tp_list_this[thisindex].time_over_threshold << " , " << tp_list_this[thisindex].adc_integral << " , " <<tp_list_this[thisindex].adc_peak <<std::endl;
-    
-
-      //std::cout << "SecondTime braggE maxadc : " << tp_list_this[thisindex].adc_integral << ", and index: " << thisindex << std::endl;  
-    //}
-    // std::cout << "SecondTime maxadcindex: " << imaxadc << std::endl;
-    //    int maxadcindex =  getIndex(initialvec_adc, tp_list_maxadc[imaxadc].adc_integral);
-    //maxadcindex_vec.push_back(maxadcindex);
-
-
+    std::cout << "ch, this=i=tplistmaxadc, p, n, sf, sb := " << chnl_maxadc << "," << tp_list_this[imaxadc].channel << " , " << tp_list_prev[imaxadc].channel << " , " << tp_list_next[imaxadc].channel << " . " << tp_list_sf[imaxadc].channel << " , " << tp_list_sb[imaxadc].channel << std::endl;
+ 
     maxadcindex =  getIndex(initialvec_adc, tp_list_maxadc[imaxadc].adc_integral);
-
-    //    std::cout << "nchnl and jchnl: " << tp_list_next[icheck].channel << ", " << tp_list[icheck].channel << std::endl;
 
   //Loop starts from channel with maxadc to look through all the TPs in forward channels
     for (int icheck=maxadcindex; icheck<tp_list.size(); icheck++){
-std::cout << "tp_list.size(): "<< icheck << ", " << tp_list[icheck].channel << ", " << chnl_maxadc << std::endl;
-//std::cout << "nchnl and jchnl: " << tp_list_next[icheck].channel << ", " << tp_list[icheck].channel << std::endl;      
+std::cout << "tp_list.size(): "<< icheck << ", j.0" << tp_list[icheck].channel << ", ch" << chnl_maxadc << std::endl;
+     
   if (frontfound == true) break;
 
-  //    std::cout << "TP list icheck channel: " << icheck <<" , " << tp_list[icheck].channel << std::endl;
        //If current hit (icheck loop) is in channel two channels away either from channel with max adc or channel next to maxadc channel based on if we find hit in next channel (right next to chnl with max adc)   
       if(tp_list[icheck].channel >= (chnl_maxadc+2)){
 
-	//	std::cout << "Next channel status: " << tp_list_next[icheck].channel << std::endl;
-	//	tp_list_maxadc = tp_list_next;
+      	std::cout << "chn and Next channel status: " << chnl_maxadc << " , " << tp_list_next[imaxadc].channel << std::endl;
 
-	chnl_maxadc = tp_list_next[icheck].channel;
-	//	tp_list_maxadc[imaxadc].channel =tp_list_next[imaxadc].channel;// tp_list_next[icheck].channel;
-	//std::cout << "ChnlMaxADC > +2: " << chnl_maxadc << std::endl;
-     std::cout <<"i0 and n0 First: " << tp_list_maxadc[imaxadc].channel << " , " << tp_list_next[imaxadc].channel << std::endl;
-	//std::cout << "chnlmaxadc: " << chnl_maxadc << "next chnl: " << tp_list_next[icheck].channel << "prev chnl: " << tp_list_prev[icheck].channel << "sf channel: " << tp_list_sf[icheck].channel;
+	chnl_maxadc = tp_list_next[imaxadc].channel;
+
+	std::cout << "chn and Next channel status after ch=n: " << chnl_maxadc << " , " << tp_list_next[imaxadc].channel << std::endl;
+	
 	
 	if (hitfound == false) break;
 
-
-	//	std::cout <<"n0 and p0 and j[0] and i[0] and sf [0]" <<  tp_list_next[imaxadc].channel << " , " << tp_list_prev[imaxadc].channel << " , " << tp_list[icheck].channel <<  " , " << tp_list_maxadc[imaxadc].channel << " , " << tp_list_sf[imaxadc].channel << std::endl;
-
 	if (deadch[chnl_maxadc+1] ==0 and tp_list[icheck].channel!=(chnl_maxadc+1)){
-	  //if (tp_list_prev[icheck].channel == chnl_maxadc){ // chnl_maxadc = tp_list_maxadc[imaxadc].channel
+
+	  std::cout << "ch, this=i=tplistmaxadc, p, n, sf := " << chnl_maxadc << "," << tp_list_this[imaxadc].channel << " , " << tp_list_prev[imaxadc].channel << " , " << tp_list_next[imaxadc].channel << " . " << tp_list_sf[imaxadc].channel << std::endl;
+	  
+
 	  if (tp_list_prev[imaxadc].channel == chnl_maxadc){  
 	  slope = 0;
 	    std::cout << "Slope is zero?? "<< slope << std::endl;
 	  }
-	  //i think, imaxadc should be used for prev and sf as I used previously and not icheck
+	 
 	  else if (tp_list_prev[imaxadc].channel == tp_list_sf[imaxadc].channel){
 	    slope = (tp_list_prev[imaxadc].time_start + (tp_list_prev[imaxadc].time_over_threshold)/2 - tp_list_maxadc[imaxadc].time_start - (tp_list_maxadc[imaxadc].time_over_threshold)/2)/ (tp_list_prev[imaxadc].channel-tp_list_maxadc[imaxadc].channel);
 	    std::cout << "Slope if p ==  sf: "<< slope << std::endl;
@@ -343,8 +312,10 @@ std::cout << "tp_list.size(): "<< icheck << ", " << tp_list[icheck].channel << "
 	  while (deadch[chnl_maxadc+1] ==0 and chnl_maxadc+1 < ColPlEndChnl) {
 	    chnl_maxadc += 1;
 	    deadcnt += 1;
+	    std::cout << "Skipping through dead channel: " << chnl_maxadc << "with dead cnt: " << deadcnt << std::endl; 
 	  }
-  tp_list_prev[imaxadc].time_start = tp_list_prev[imaxadc].time_start + std::floor(float(slope)*float(deadcnt));
+
+	  tp_list_prev[imaxadc].time_start = tp_list_prev[imaxadc].time_start + std::floor(float(slope)*float(deadcnt));
 
       std::cout <<"p[1] after update in deadch loop: " << tp_list_prev[imaxadc].time_start << std::endl;
 	}
@@ -354,25 +325,28 @@ std::cout << "tp_list.size(): "<< icheck << ", " << tp_list[icheck].channel << "
 	  //std::cout << "BraggCount: " << braggcnt << std::endl;
 	  //that is 3 channels away from the channel with maxadc
 	  if (braggcnt==3){
+	    std::cout << "bragcnt=3 contents(sf, next) before : " << tp_list_sf[imaxadc].channel << " , " << tp_list_next[imaxadc].channel << std::endl;   
 	    tp_list_sf = tp_list_next; // next is where the hit was found previously
-	    //std::cout << "bragcnt=3 contents(sf, next): " << tp_list_sf[0].channel << " , " << tp_list_next[0].channel << std::endl;
+	    //    tp_list_sf[imaxadc].channel = tp_list_next[imaxadc].channel ;
+
+	 std::cout << "bragcnt=3 contents(sf, next) after: " << tp_list_sf[imaxadc].channel << " , " << tp_list_next[imaxadc].channel << std::endl;
 	  }
 	  //that is 13 channels away from the channel with braggcnt=3 thats is 3 channels away from maxadc channel
 	  if (braggcnt >= tracklen/2){
 	    frontfound = true;
-	    //std::cout << "next tmin, tmax" << tp_list_next[icheck].time_start << " , " << (tp_list_next[icheck].time_start + tp_list_next[icheck].time_over_threshold) <<  "sf tmin, tmax"<< tp_list_sf[icheck].time_start <<  " , " << (tp_list_sf[icheck].time_start + tp_list_sf[icheck].time_over_threshold) <<  std::endl;
 
-	    frontslope_top = (tp_list_next[icheck].time_start + tp_list_next[icheck].time_over_threshold - tp_list_sf[icheck].time_start - tp_list_sf[icheck].time_over_threshold)/(tp_list_next[icheck].channel - tp_list_sf[icheck].channel);
+	    frontslope_top = (tp_list_next[imaxadc].time_start + tp_list_next[imaxadc].time_over_threshold - tp_list_sf[imaxadc].time_start - tp_list_sf[imaxadc].time_over_threshold)/(tp_list_next[imaxadc].channel - tp_list_sf[imaxadc].channel);
 
-	    frontslope_mid = (tp_list_next[icheck].time_start + (tp_list_next[imaxadc].time_over_threshold)/2 -tp_list_sf[icheck].time_start - (tp_list_sf[icheck].time_over_threshold)/2)/(tp_list_next[icheck].channel - tp_list_sf[icheck].channel);
+	    frontslope_mid = (tp_list_next[imaxadc].time_start + (tp_list_next[imaxadc].time_over_threshold)/2 -tp_list_sf[imaxadc].time_start - (tp_list_sf[imaxadc].time_over_threshold)/2)/(tp_list_next[imaxadc].channel - tp_list_sf[imaxadc].channel);
 
-	    frontslope_bottom = (tp_list_next[icheck].time_start - tp_list_sf[icheck].time_start)/(tp_list_next[icheck].channel - tp_list_sf[icheck].channel);
+	    frontslope_bottom = (tp_list_next[imaxadc].time_start - tp_list_sf[imaxadc].time_start)/(tp_list_next[imaxadc].channel - tp_list_sf[imaxadc].channel);
 
-	    //std::cout << "front slope top, mid, bottom " << frontslope_top << " , " << frontslope_mid << " , " << frontslope_bottom << std::endl;
+	std::cout << "front slope top, mid, bottom " << frontslope_top << " , " << frontslope_mid << " , " << frontslope_bottom << std::endl;
 
 	  }
 	  tp_list_prev = tp_list_next;
-	  //std::cout << "pchnl and nchnl: " << tp_list_prev[icheck].channel << ", " << tp_list_next[icheck].channel << std::endl;
+	  // tp_list_prev[imaxadc].channel = tp_list_next[imaxadc].channel;
+	  std::cout << "pchnl and nchnl: " << tp_list_prev[imaxadc].channel << ", " << tp_list_next[imaxadc].channel << std::endl;
 	}
       }
 
@@ -383,8 +357,7 @@ std::cout << "tp_list.size(): "<< icheck << ", " << tp_list[icheck].channel << "
       prev_time_min = 0;
      
 
-      // std::cout << " This time: " << this_time_min << "Previous Time: " << tp_list_prev[icheck].time_start << std::endl;
-      //std::cout << "tplist icheck channel: " << tp_list[icheck].channel << std::endl;
+    
       //If current hit (icheck loop) is in channel next to channel with max adc
 	if(tp_list[icheck].channel == (chnl_maxadc+1)){
 	  //std::cout << " This time: " << this_time_min << "Previous Time: " << tp_list_prev[icheck].time_start << std::endl;
@@ -393,8 +366,6 @@ std::cout << "tp_list.size(): "<< icheck << ", " << tp_list[icheck].channel << "
 	this_time_min =  tp_list[icheck].time_start;
 	prev_time_max = tp_list_prev[imaxadc].time_start + tp_list_prev[imaxadc].time_over_threshold;
 	prev_time_min =tp_list_prev[imaxadc].time_start;
-
-	//	std::cout << " This time: " << this_time_min << "Previous Time: " << tp_list_prev[icheck].time_start << std::endl;
 	
 	if ((this_time_min>=prev_time_min and this_time_min<=prev_time_max) or (this_time_max>=prev_time_min and this_time_max<=prev_time_max) or (prev_time_max<=this_time_max and prev_time_min>=this_time_min) ){
 	  std::cout << "Passed time condition: " << prev_time_min << " , " << prev_time_max  << std::endl;
@@ -406,12 +377,17 @@ std::cout << "tp_list.size(): "<< icheck << ", " << tp_list[icheck].channel << "
 
 	  }
 	
-        if (tp_list[icheck].channel == tp_list_next[icheck].channel) break;
-	hitfound == true;
+        if (tp_list[icheck].channel == tp_list_next[imaxadc].channel) break;
+	hitfound = true;
 	std::cout << "Hit Found in channel: " << tp_list[icheck].channel << std::endl;
-       	tp_list_next = tp_list;   // Assigning right value (tp_list) to left value (next)
-	std::cout << "nchnl and jchnl: " << tp_list_next[icheck].channel << ", " << tp_list[icheck].channel << std::endl;
-	std::cout << "nchnl and jchnl: " << tp_list_next[imaxadc].channel << ", " << tp_list[imaxadc].channel << std::endl;
+
+	tp_list_next[imaxadc].channel = tp_list[icheck].channel;   // Assigning right value (tp_list) to left value (next)
+	tp_list_next[imaxadc].time_start = tp_list[icheck].time_start;
+	tp_list_next[imaxadc].adc_integral = tp_list[icheck].adc_integral;
+	tp_list_next[imaxadc].adc_peak = tp_list[icheck].adc_peak;
+	tp_list_next[imaxadc].time_over_threshold = tp_list[icheck].time_over_threshold;
+
+	std::cout << "nchnl and jchnl: " << tp_list_next[imaxadc].channel << ", " << tp_list[icheck].channel << std::endl;
 	std::cout << "time difference: " << abs(this_time_min - horiz_tb) << " , " << abs(this_time_max - horiz_tt) << std::endl;
 
       if (abs(this_time_min - horiz_tb) <=1 or abs(this_time_max - horiz_tt) <=1){
@@ -428,28 +404,28 @@ std::cout << "tp_list.size(): "<< icheck << ", " << tp_list[icheck].channel << "
 	if (this_time_min < time_min) time_min = this_time_min;
 	
 	std::cout << "Time max: " << this_time_max  << " , Time Min: " << this_time_min << std::endl;
-	//std::cout << "nchnl and jchnl: " << tp_list_next[icheck].channel << ", " << tp_list[icheck].channel << std::endl;
+	std::cout << "nchnl and jchnl: " << tp_list_next[imaxadc].channel << ", " << tp_list[icheck].channel << std::endl;
 	
 }
 
       }
     }
+
   
 
- }}//delete these three when uncommenting the following
-   /*
+    // }}//delete these three when uncommenting the following
+ 
   //Look backwards now 
 
     chnl_maxadc = tp_list_maxadc[imaxadc].channel;
-    //  tp_list_prev.push_back({tp_list_maxadc[imaxadc].channel, tp_list_maxadc[imaxadc].time_start, tp_list_maxadc[imaxadc].adc_integral, tp_list_maxadc[imaxadc].adc_peak, tp_list_maxadc[imaxadc].time_over_threshold});
-    //tp_list_next.push_back({tp_list_maxadc[imaxadc].channel, tp_list_maxadc[imaxadc].time_start, tp_list_maxadc[imaxadc].adc_integral, tp_list_maxadc[imaxadc].adc_peak, tp_list_maxadc[imaxadc].time_over_threshold});
+ 
     tp_list_prev = tp_list_this;
     tp_list_next = tp_list_this;
     this_time_max =0;
     this_time_min =0;
     prev_time_max = 0;
     prev_time_min =0;
-    deadcnt=0
+    deadcnt=0;
     slope=0;
     hitfound = false;
     
@@ -525,10 +501,10 @@ std::cout << "tp_list.size(): "<< icheck << ", " << tp_list[icheck].channel << "
 	  if(tp_list[icheckb].channel = (chnl_maxadc-1)){
 	    this_time_max = tp_list[icheckb].time_start + tp_list[icheckb].time_over_threshold;
 	    this_time_min =  tp_list[icheckb].time_start;
-	    prev_time_max = tp_list_prev[icheckb].time_start + tp_list_prev[icheckb].time_over_threshold;
-	    prev_time_min =tp_list_prev[icheckb].time_start;
+	    prev_time_max = tp_list_prev[imaxadc].time_start + tp_list_prev[imaxadc].time_over_threshold;
+	    prev_time_min =tp_list_prev[imaxadc].time_start;
 
-	    if ((this_time_min>=prev_time_min and this_time_min<=prev_time_max) or (this_time_max>=prev_time_min and this_time_max<=prev_time_max) or (prev_time_max<=this _time_max and prev_time_min>=this_time_min) ){
+	    if ((this_time_min>=prev_time_min and this_time_min<=prev_time_max) or (this_time_max>=prev_time_min and this_time_max<=prev_time_max) or (prev_time_max<=this_time_max and prev_time_min>=this_time_min)){
 	      std::cout << "Passed time condition (backward loop): " << prev_time_min << " , " << prev_time_max  << std::endl;
 	      std::cout << "horiz_noise_cnt: " << horiz_noise_cnt << std::endl;
 	      if (horiz_noise_cnt == 0){
@@ -537,12 +513,18 @@ std::cout << "tp_list.size(): "<< icheck << ", " << tp_list[icheck].channel << "
 		std::cout <<"horiz_tb: " << horiz_tb <<" , horiz_tt: " << horiz_tt << std::endl;
 
 	      }
+	    
 
    if (tp_list[icheckb].channel == tp_list_next[imaxadc].channel) break;
    hitfound == true;
    std::cout << "Hit Found in channel: backwards  " << tp_list[icheckb].channel << std::endl;
-   tp_list_next = tp_list;
 
+   //   tp_list_next = tp_list;
+   tp_list_next[imaxadc].channel = tp_list[icheckb].channel;   // Assigning right value (tp_list) to left value (next)                                           
+   tp_list_next[imaxadc].time_start = tp_list[icheckb].time_start;
+   tp_list_next[imaxadc].adc_integral = tp_list[icheckb].adc_integral;
+   tp_list_next[imaxadc].adc_peak = tp_list[icheckb].adc_peak;
+   tp_list_next[imaxadc].time_over_threshold = tp_list[icheckb].time_over_threshold;
 
    if (abs(this_time_min - horiz_tb) <=1 or abs(this_time_max - horiz_tt) <=1){
      horiz_noise_cnt+=1;
@@ -557,7 +539,6 @@ std::cout << "tp_list.size(): "<< icheck << ", " << tp_list[icheck].channel << "
    if (this_time_max > time_max) time_max = this_time_max;
    if (this_time_min < time_min) time_min = this_time_min;
 
-
 	    }
 	  }
       } //endloop over icheck b
@@ -565,6 +546,5 @@ std::cout << "tp_list.size(): "<< icheck << ", " << tp_list[icheck].channel << "
  }// end over imaxadc loop
 
   return trigtot;
-}
 
-*/
+}
