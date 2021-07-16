@@ -76,11 +76,15 @@ int main(){
   }
 
 
-  //ifstream myfile("tps.txt");                                                                                                  
-  ifstream myfile("listfilefilter.txt");
-  if (!myfile.is_open()) {
-    std::cout << "Error opening file";
-  }
+  //ifstream myfile("tps.txt");                                                                               
+  ifstream myfile;
+  myfile.open("listfilefilter.txt");
+ 
+
+  //  ifstream myfile("listfilefilter.txt");
+  //if (!myfile.is_open()) {
+  // std::cout << "Error opening file";
+  // }
 
   uint32_t ch_init = 0;
   int maxadcindex;
@@ -126,7 +130,7 @@ int main(){
   uint32_t boxwidch=96; //96;                                                                                                    
   std::vector<uint32_t> chnlind_vec;
 
-  std::vector<TriggerPrimitive> tp_list;
+  std::vector<TriggerPrimitive> tp_list;//,5000,5000,5000,5000];
   std::vector<TriggerPrimitive> tp_only;
   std::vector<TriggerPrimitive> tp_list_maxadc;
   std::vector<TriggerPrimitive> tp_list_this;
@@ -139,7 +143,7 @@ int main(){
   std::vector<TriggerPrimitive> final_tp_list;
   std::vector<int>  maxadcindex_vec;
   std::vector<uint16_t> initialvec_adc;
-  std::vector<TriggerPrimitive> test;
+  //  std::vector<TriggerPrimitive> test;
 
   int64_t  time_start;
   int32_t  time_over_threshold;
@@ -159,24 +163,27 @@ int main(){
   // numOfEvents = tree->GetEntries();
   // std::cout << "Evts: " << numOfEvents << std::endl;
 
-
-  while (myfile >> channel >> time_start >> adc_integral >> adc_peak >> time_over_threshold)
-    {
-      if (time_start >= 3200 and time_start <= 7800){             
-      tp_list.push_back({channel, time_start, adc_integral,  adc_peak, time_over_threshold});
-    
-      initialvec_adc.push_back(adc_integral);
-      }}
-  //std::cout<< "Initial TPList size: " << tp_list.size() << std::endl;
+    string line;
+    while (getline(myfile, line))
+      {
+	std::istringstream ss(line);
+	while (ss >> channel >> time_start >> adc_integral >> adc_peak >> time_over_threshold)
+	  if (time_start >= 3200 and time_start <= 7800){  
+	  tp_list.push_back({channel, time_start, adc_integral,  adc_peak, time_over_threshold}); 
+	initialvec_adc.push_back(adc_integral);
+	  }}
+ 
+  myfile.close();
+  
+  std::cout<< "Initial TPList size: " << tp_list.size() << std::endl;
   std::sort (tp_list.begin(), tp_list.end(), compare_channel);
   //std::sort (tp_list.begin(), tp_list.end(), compare_tstart);
 
-  tp_list.push_back({0,0,0,0,0});
-  
-  for (int i=0; i<tp_list.size(); ++i){
-    std::cout << "Initital Sorted TPList contents, Channel" << tp_list[i].channel << ", tstart" << tp_list[i].time_start  << "TPs(ToT,ADCIntg, ADC)"<< tp_list[i].time_over_threshold << " , " << tp_list[i].adc_integral << " , " << tp_list[i].adc_peak <<std::endl;
-    }
-
+  /*  for (int i=0; i<tp_list.size(); ++i){
+   std::cout << "Initital Sorted TPList contents, Channel" << tp_list[i].channel << ", tstart" << tp_list[i].time_start  << "TPs(ToT,ADCIntg, ADC)"<< tp_list[i].time_over_threshold << " , " << tp_list[i].adc_integral << " , " << tp_list[i].adc_peak <<std::endl;
+   }
+  std::cout << tp_list.size() << "capcaity of vector: " << tp_list.capacity() << std::endl;
+  */
   //Time slices to divide the collection plane channels
   for(int timeind=3200; timeind <= 7800; timeind+=boxwidtime){
     timeind_vec.push_back(timeind);                                                                                              
@@ -187,55 +194,71 @@ for(int chnlind=ColPlStartChnl; chnlind<(ColPlEndChnl+boxwidch); chnlind+=boxwid
   chnlind_vec.push_back(chnlind);                                                                                                
  }  
   
-
-
+// std::cout << "tp_list.size() " << tp_list.size() << std::endl;
  for (int i=0; i<tp_list.size(); ++i){  //Similar to running over lists within a list of python 
+   // std::cout << "Start tp list channel: " << tp_list[i].channel << "box cnt: " << chnlind_vec[boxchcnt] << std::endl;
+   if ((tp_list[i].channel > chnlind_vec[boxchcnt]) or (i==tp_list.size()-1)){
 
-   if (tp_list[i].channel > chnlind_vec[boxchcnt] or i==tp_list.size()-1){
-
+     //std::cout << "Checking the tmp chnl vector status: " << tmpchnl_vec.size() << std::endl;
+     if(tmpchnl_vec.size()==0){
        while(tp_list[i].channel > chnlind_vec[boxchcnt]){
 	 boxchcnt+=1;
-	 }
-       
-       if (tmpchnl_vec.size() != 0 or i==tp_list.size()){      
-       for(int time_ind=0; time_ind < timeind_vec.size()-1; time_ind++){
+	 //	 std::cout << "Box cnt happening: " << boxchcnt << std::endl;
+       }
+     }//added now
+     else{ //added now
+       //commented nowif (tmpchnl_vec.size() != 0 or i==tp_list.size()){      
+       for(int time_ind=0; time_ind < timeind_vec.size()-1; time_ind++){ //removed now ...vec.size()-1
+	 // std::cout << " going to clear sublist  " << sublist.size() << std::endl;
 	 sublist.clear(); //={};
-	 
+	 //std::cout << "sublist cleared: " << sublist.size() << std::endl;
+
+     	 //std::cout << "tmp chn vec size: " << tmpchnl_vec.size() << std::endl;
 	 for (int tmpch=0; tmpch < tmpchnl_vec.size(); tmpch++){
-	   if (tmpchnl_vec[tmpch].time_start >= timeind_vec[time_ind] and tmpchnl_vec[tmpch].time_start < timeind_vec[time_ind+1]){
-	   
+	   //std::cout <<"Check on time condition: "<< tmpchnl_vec[tmpch].time_start << "is >= ?" << timeind_vec[time_ind] << "and : " << timeind_vec[time_ind+1] << std::endl;
+	   if ((tmpchnl_vec[tmpch].time_start >= timeind_vec[time_ind]) and (tmpchnl_vec[tmpch].time_start < timeind_vec[time_ind+1])){
+	     //std::cout << "Lets fill the sublist: " << tmpchnl_vec[tmpch].channel << " , ts: " <<  tmpchnl_vec[tmpch].time_start << std::endl;
 	     sublist.push_back({tmpchnl_vec[tmpch].channel, tmpchnl_vec[tmpch].time_start, tmpchnl_vec[tmpch].adc_integral, tmpchnl_vec[tmpch].adc_peak, tmpchnl_vec[tmpch].time_over_threshold});
-        }}
-	 if(sublist.size()>0 or i==tp_list.size()){
-	   for (int sl=0; sl<sublist.size(); sl++){                             
+	     
+	   }} //closed tm[chnl vec block
+	 maxadc = 0;
+	 //std::cout <<"Check on sublist size again " << sublist.size() << std::endl;
+	 if(sublist.size()>0){ //C. now  or i==tp_list.size()){
+	   for (int sl=0; sl<sublist.size(); sl++){                            
+	     //	     std::cout << "adc intg in sublist is : " << sublist[sl].adc_integral << std::endl;
 	     if (sublist[sl].adc_integral> maxadc) {
 	     maxadc =  sublist[sl].adc_integral;
 	     maxadcind = sl;
 	                                                             
-
+	     //  std::cout << "check on maxadc :" << maxadc  << " with index: " << maxadcind << std::endl;
 	     if(maxadc > braggE){
-	           
+	       //std::cout <<"found maxadc : fill the tp_list_maxadc: " << sublist[maxadcind].channel << " ,  and ts is " << sublist[maxadcind].time_start << " , "<< "and adc_intg: " << sublist[maxadcind].adc_integral <<  std::endl;
 	       tp_list_maxadc.push_back({sublist[maxadcind].channel, sublist[maxadcind].time_start, sublist[maxadcind].adc_integral, sublist[maxadcind].adc_peak, sublist[maxadcind].time_over_threshold});
 	     
-	     } }}}
+	       // lets end this later also  }   // lets end later}}} //end of sublist block 
+	       //std::cout << "maxadc check: " << maxadc << std::endl;
 	 maxadc = 0;
-
+	 //std::cout << "maxadc check 2: " << maxadc << std::endl;
+	     }
+  }}}
        }//closed time indices loop
+       // std::cout << "before clearinf tmp chnl vec:  " << tmpchnl_vec.size() << std::endl;
        tmpchnl_vec.clear();
        
-       }
+       // std::cout <<"cleared tmp chnl vec:  " << tmpchnl_vec.size() << std::endl;
+
+     }
+
    }
- 
-   //std::cout<< "TPList channel here : " << tp_list[i].channel << "box cnt here is: " << chnlind_vec[boxchcnt] << std::endl;
-   //}  
-  
-   if (tp_list[i].channel <= chnlind_vec[boxchcnt] or i==tp_list.size()-1){
+   //std::cout<< "TPList channel here : " << tp_list[i].channel << "box cnt here is: " << chnlind_vec[boxchcnt] << std::endl;  
+   if (tp_list[i].channel > chnlind_vec[boxchcnt]) boxchcnt+=1;
+   if (tp_list[i].channel <= chnlind_vec[boxchcnt] or i==tp_list.size()){
          
  tmpchnl_vec.push_back({tp_list[i].channel, tp_list[i].time_start, tp_list[i].adc_integral, tp_list[i].adc_peak, tp_list[i].time_over_threshold});
-
+ //std::cout << "Tmp chnl filled: " << tp_list[i].channel << " , " << tp_list[i].adc_integral << std::endl;
    }
 
- }
+ } // end for loop on tp size 
  //std::cout << "Size of tp_list_maxadc: " << tp_list_maxadc.size() << std::endl;
 
  for (int tpt=0; tpt<tp_list_maxadc.size(); tpt++){
@@ -245,10 +268,9 @@ for(int chnlind=ColPlStartChnl; chnlind<(ColPlEndChnl+boxwidch); chnlind+=boxwid
    maxadcindex =  getIndex(initialvec_adc, tp_list_maxadc[tpt].adc_integral);
    maxadcindex_vec.push_back(maxadcindex);
   
-   }
+ }
 
-
- for (int imaxadc=0; imaxadc<tp_list_maxadc.size(); imaxadc++){
+ for(int imaxadc=0; imaxadc<tp_list_maxadc.size(); imaxadc++){
    std::cout << "I (imaxadc) is: " << tp_list_maxadc[imaxadc].channel << ","<<  tp_list_maxadc[imaxadc].adc_integral << std::endl;
    
     chnl_maxadc = tp_list_maxadc[imaxadc].channel;
@@ -275,10 +297,12 @@ for(int chnlind=ColPlStartChnl; chnlind<(ColPlEndChnl+boxwidch); chnlind+=boxwid
   //Loop starts from channel with maxadc to look through all the TPs in forward channels
     for (int icheck=maxadcindex; icheck<tp_list.size(); icheck++){
 std::cout << "tp_list.size(): "<< icheck << ", j.0" << tp_list[icheck].channel << ", ch" << chnl_maxadc << std::endl;
-     
+
+ std::cout <<"frontfound is: " << frontfound << std::endl;     
   if (frontfound == true) break;
 
        //If current hit (icheck loop) is in channel two channels away either from channel with max adc or channel next to maxadc channel based on if we find hit in next channel (right next to chnl with max adc)   
+  std::cout << "icheck chnl: " << tp_list[icheck].channel << "chnl mxadc: " << chnl_maxadc << std::endl;
       if(tp_list[icheck].channel >= (chnl_maxadc+2)){
 
       	std::cout << "chn and Next channel status: " << chnl_maxadc << " , " << tp_list_next[imaxadc].channel << std::endl;
