@@ -38,7 +38,7 @@ int getIndex(vector<uint16_t> v, uint16_t K){
   }
 }
 
-void Michel_allevts(){
+void MichelAlgo(){
  
   //dead channels                                                                                                                                              
   int col1, col2;
